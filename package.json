@@ -1,7 +1,6 @@
 {
   "private": true,
   "name": "personalPortfolio",
-  "homepage": "http://vedanshv.tech/",
   "version": "1.0.0",
   "scripts": {
     "build": "react-scripts build",
