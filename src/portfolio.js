@@ -14,8 +14,7 @@ const greeting = {
   logo_name: "Arshaq.ck()",
   // nickname: "harry / picleric",
   full_name: "Arshaq ck",
-  subTitle:
-    "Mobile App Developer, React Native Enthusiast, Life Long Learner.",
+  subTitle: "Mobile App Developer, React Native Enthusiast, Life Long Learner.",
   resumeLink:
     "https://drive.google.com/file/d/1wrkG62HyDgbUOjNxexCT891tcqd83_cK/view?usp=sharing",
   mail: "mailto:arshaqueck@gmail.com@gmail.com",
@@ -57,7 +56,7 @@ const skills = {
             color: "#1572B6",
           },
         },
-    
+
         // {
         //   skillName: "Bootstrap",
         //   fontAwesomeClassname: "simple-icons:bootstrap",
@@ -433,28 +432,38 @@ const experience = {
       title: "Work Experience",
       experiences: [
         {
-          title: "React Native Developer",
+          title: "Senior software engineer",
+          company: "QSS Technosoft",
+          company_url: "https://www.qsstechnosoft.com/",
+          logo_path: "Technocolabs.jfif",
+          duration: "Jul 2022 - Present",
+          location: "Noida , Uttar Pradesh , India",
+          description: "Developing Applications for both Android and IOS.",
+          // "Created Front end of Yearn Financial Mutual Funds website. also degined simple web application for better user experience, designed DB Schemas as well.",
+          color: "#ee3c26",
+        },
+        {
+          title: "Senior Software Engineer",
           company: "Zerone Consulting Pvt Ltd",
           company_url: "https://technocolabs.com/",
           logo_path: "Technocolabs.jfif",
-          duration: "October 2019 - present",
-          location: "Cochin,kerala,India",
-          description: 'Developing Applications for both Android and IOS.',
+          duration: "October 2020 - July 2022",
+          location: "Cochin , kerala, India",
+          description: "Developing Applications for both Android and IOS.",
           // "I worked on the Dashboard project which helps users track their activities while using Walo Application. I also worked on Ocean Inventory Application and it's Admin panel Backend as well as on Ocean Inventory Admin Front-end using React and also worked on Walo Admin Backend.",
           color: "#0071C5",
         },
-        // {
-        //   title: "Data Science Intern",
-        //   company: "The Sparks Foundation",
-        //   company_url: "hhttps://thesparksfoundation.info/",
-        //   logo_path: "TSF.png",
-        //   duration: "Aug 2020 - Sept 2020",
-        //   location: "Remote",
-        //   description: `Developed predictive models and deployed it on a full-stack website using Flask. Used Boxplot, Heatmap and Confusion Matrix for data visualization. Deep analysis on the superstore dataset using Bar Plots, Bar Charts, Pair Plots and Joint Plots for specific regions.
-        //   `,
-        //   // "Created Front end of Yearn Financial Mutual Funds website. also degined simple web application for better user experience, designed DB Schemas as well.",
-        //   color: "#ee3c26",
-        // },
+        {
+          title: "Junior Software Engineer",
+          company: "Sysboon Technologies",
+          company_url: "",
+          logo_path: "Technocolabs.jfif",
+          duration: "October 2019 - October 2020",
+          location: "Kozhikode , kerala, India",
+          description: "Developing Applications for both Android and IOS.",
+          // "I worked on the Dashboard project which helps users track their activities while using Walo Application. I also worked on Ocean Inventory Application and it's Admin panel Backend as well as on Ocean Inventory Admin Front-end using React and also worked on Walo Admin Backend.",
+          color: "#0071C5",
+        },
       ],
     },
     // {
@@ -543,7 +552,7 @@ const projectsHeader = {
 const contactPageData = {
   contactSection: {
     title: "Contact Me",
-    profile_image_path: "profile_photo_2.png",
+    profile_image_path: "profile_photo_2.jpeg",
     description:
       "You can contact me at the places mentioned below. I will try to get back to you as fast as I can. ",
   },
@@ -560,6 +569,51 @@ const projects = {
   data: [
     {
       id: "0",
+      name: "GoPath",
+      url: "https://github.com/vvHacker007/Tune-In",
+      description: "Service application for medical and health care.",
+      languages: [
+        {
+          name: "ReactJS",
+          iconifyClass: "logos-react",
+        },
+        {
+          name: "JavaScript",
+          iconifyClass: "logos-javascript",
+        },
+      ],
+    },
+    {
+      id: "1",
+      name: "Ecommerce App",
+      url: "https://github.com/vvHacker007/Movie-Recommendation-Systems",
+      description:
+        "This is an application for e-commerce that provides access to all the products and buying.",
+      languages: [
+        {
+          name: "ReactJS",
+          iconifyClass: "logos-react",
+        },
+        {
+          name: "JavaScript",
+          iconifyClass: "logos-javascript",
+        },
+      ],
+    },
+    {
+      id: "2",
+      name: "Kimst Hospital App",
+      url: "https://github.com/vvHacker007/Tetris",
+      description: "Made a GUI based arcade game Tetris using pygame.",
+      languages: [
+        {
+          name: "Python",
+          iconifyClass: "logos-python",
+        },
+      ],
+    },
+    {
+      id: "3",
       name: "Comet",
       url: "https://www.mindspace.cf/",
       description:
@@ -573,12 +627,11 @@ const projects = {
           name: "JavaScript",
           iconifyClass: "logos-javascript",
         },
-      
       ],
     },
     {
-      id: "1",
-      name: "Tracking App",
+      id: "4",
+      name: "Skyline Tracking App",
       url: "https://github.com/vvHacker007/Youtube-Downloader/",
       description:
         "A mobile application for tracking live vehicles and access to real time commands and location features.",
@@ -594,24 +647,7 @@ const projects = {
       ],
     },
     {
-      id: "2",
-      name: "GoPath",
-      url: "https://github.com/vvHacker007/Tune-In",
-      description:
-        "Service application for medical and health care.",
-      languages: [
-        {
-          name: "ReactJS",
-          iconifyClass: "logos-react",
-        },
-        {
-          name: "JavaScript",
-          iconifyClass: "logos-javascript",
-        },
-      ],
-    },
-    {
-      id: "3",
+      id: "5",
       name: "X-fly Insights Management",
       url: "https://github.com/vvHacker007/Event-Scheduler",
       description:
@@ -628,11 +664,41 @@ const projects = {
       ],
     },
     {
-      id: "4",
-      name: "Ecommerce App",
-      url: "https://github.com/vvHacker007/Movie-Recommendation-Systems",
+      id: "6",
+      name: "Health Fabric",
+      url: "https://github.com/vvHacker007/Notepad",
       description:
-        "This is an application for e-commerce that provides access to all the products and buying.",
+        "Made a GUI based Notepad. Also made an executable file for the project which can be downloaded and used by anyone on their personal computer.",
+      languages: [
+        {
+          name: "Python",
+          iconifyClass: "logos-python",
+        },
+      ],
+    },
+
+    {
+      id: "7",
+      name: "OCR Scan Easyish",
+      url: "https://github.com/vvHacker007/Steganography",
+      description:
+        "A CLI tool to conceal messages within a file, text, image, or video.",
+      languages: [
+        {
+          name: "Python",
+          iconifyClass: "logos-python",
+        },
+        {
+          name: "OpenCV",
+          iconifyClass: "logos-opencv",
+        },
+      ],
+    },
+    {
+      id: "8",
+      name: "Lifetoken",
+      url: "https://github.com/vvHacker007/Login-Authenticator",
+      description: "Made a template for a Login Authenticator using Flask ",
       languages: [
         {
           name: "ReactJS",
@@ -644,110 +710,46 @@ const projects = {
         },
       ],
     },
-    // {
-    //   id: "3",
-    //   name: "Login Authenticator",
-    //   url: "https://github.com/vvHacker007/Login-Authenticator",
-    //   description: "Made a template for a Login Authenticator using Flask ",
-    //   languages: [
-    //     {
-    //       name: "HTML5",
-    //       iconifyClass: "vscode-icons:file-type-html",
-    //     },
-    //     {
-    //       name: "CSS3",
-    //       iconifyClass: "vscode-icons:file-type-css",
-    //     },
-    //     {
-    //       name: "Python",
-    //       iconifyClass: "logos-python",
-    //     },
-    //     {
-    //       name: "Flask",
-    //       iconifyClass: "cib-flask",
-    //     },
-    //   ],
-    // },
-    // {
-    //   id: "4",
-    //   name: "Calculator",
-    //   url: "https://github.com/vvHacker007/Calculator",
-    //   description:
-    //     "Made a GUI based Calculator. Also made an executable file for the project which can be downloaded and used by anyone on their personal computer.",
-    //   languages: [
-    //     {
-    //       name: "Python",
-    //       iconifyClass: "logos-python",
-    //     },
-    //   ],
-    // },
-    // {
-    //   id: "5",
-    //   name: "Notepad",
-    //   url: "https://github.com/vvHacker007/Notepad",
-    //   description:
-    //     "Made a GUI based Notepad. Also made an executable file for the project which can be downloaded and used by anyone on their personal computer.",
-    //   languages: [
-    //     {
-    //       name: "Python",
-    //       iconifyClass: "logos-python",
-    //     },
-    //   ],
-    // },
-    // {
-    //   id: "6",
-    //   name: "Tetris",
-    //   url: "https://github.com/vvHacker007/Tetris",
-    //   description: "Made a GUI based arcade game Tetris using pygame.",
-    //   languages: [
-    //     {
-    //       name: "Python",
-    //       iconifyClass: "logos-python",
-    //     },
-    //   ],
-    // },
-    // {
-    //   id: "7",
-    //   name: "Steganography",
-    //   url: "https://github.com/vvHacker007/Steganography",
-    //   description:
-    //     "A CLI tool to conceal messages within a file, text, image, or video.",
-    //   languages: [
-    //     {
-    //       name: "Python",
-    //       iconifyClass: "logos-python",
-    //     },
-    //     {
-    //       name: "OpenCV",
-    //       iconifyClass: "logos-opencv",
-    //     },
-    //   ],
-    // },
-    // {
-    //   id: "8",
-    //   name: "Mini Paint",
-    //   url: "https://github.com/vvHacker007/Mini-Paint",
-    //   description: "GUI based Mini Paint Application.",
-    //   languages: [
-    //     {
-    //       name: "Python",
-    //       iconifyClass: "logos-python",
-    //     },
-    //   ],
-    // },
-    // {
-    //   id: "9",
-    //   name: "Speedtest",
-    //   url: "https://github.com/vvHacker007/Speed-test",
-    //   description:
-    //     "An internet speed testing application which can notify about the download speed, upload speed, and also the reaction time of the connection.",
-    //   languages: [
-    //     {
-    //       name: "Python",
-    //       iconifyClass: "logos-python",
-    //     },
-    //   ],
-    // },
+    {
+      id: "9",
+      name: "Spendable App",
+      url: "https://github.com/vvHacker007/Calculator",
+      description:
+        "Made a GUI based Calculator. Also made an executable file for the project which can be downloaded and used by anyone on their personal computer.",
+      languages: [
+        {
+          name: "Python",
+          iconifyClass: "logos-python",
+        },
+      ],
+    },
+
+    {
+      id: "10",
+      name: "CaseTrack App",
+      url: "https://github.com/vvHacker007/Mini-Paint",
+      description:
+        "An application for lawyer based companies that can manage case reports.",
+      languages: [
+        {
+          name: "Python",
+          iconifyClass: "logos-python",
+        },
+      ],
+    },
+    {
+      id: "11",
+      name: "Recruit Online",
+      url: "https://github.com/vvHacker007/Speed-test",
+      description:
+        "An internet speed testing application which can notify about the download speed, upload speed, and also the reaction time of the connection.",
+      languages: [
+        {
+          name: "Python",
+          iconifyClass: "logos-python",
+        },
+      ],
+    },
     // {
     //   id: "10",
     //   name: "Cat Classifier",
