@@ -571,7 +571,25 @@ const projects = {
       id: "0",
       name: "GoPath",
       url: "https://github.com/vvHacker007/Tune-In",
-      description: "Service application for medical and health care.",
+      description:
+        "GoPath is a health care management application where customers can book for an apponitment for any laboratary tests at specific slots.It allows to manage and track the users booking and provides necessary needs for the tests required.It is the perfect pocket tool for medical laboratory tests and enables you to browse through a huge library of common lab tests to find out more about clinical laboratory values",
+      languages: [
+        {
+          name: "ReactJS",
+          iconifyClass: "logos-react",
+        },
+        {
+          name: "JavaScript",
+          iconifyClass: "logos-javascript",
+        },
+      ],
+    },
+    {
+      id: "0",
+      name: "GoPath Agent",
+      url: "https://github.com/vvHacker007/Tune-In",
+      description:
+        "Online Aggregator Platform which connects labs to patients by optimising end to end supply chain and providing services of certified phlebotomists for Home Collection of all Lab Test Samples from anywhere and at any time to the patient's preferred lab.It allows Phlebotomists to receive the Lab Test Booking details of patients that book their Lab Test via Curelo App / Website as well as the patients assigned directly by the Admin. The Phlebotomists will be able to update the status for the Home Sample Collection on the App, allowing the Admin to keep a record of the Sample Collection Process.",
       languages: [
         {
           name: "ReactJS",
@@ -585,10 +603,10 @@ const projects = {
     },
     {
       id: "1",
-      name: "Ecommerce App",
+      name: "Delibo",
       url: "https://github.com/vvHacker007/Movie-Recommendation-Systems",
       description:
-        "This is an application for e-commerce that provides access to all the products and buying.",
+        "Delibo is an online grocery shopping app where users can purchase and order groceries online.users can create an account for browsing the list of necessary grocery items and make an order of the item to his desired location.The app allows online payment integration which helps the user to pay for the items at the time of ordering.",
       languages: [
         {
           name: "ReactJS",
@@ -604,7 +622,8 @@ const projects = {
       id: "2",
       name: "Kimst Hospital App",
       url: "https://github.com/vvHacker007/Tetris",
-      description: "Made a GUI based arcade game Tetris using pygame.",
+      description:
+        "App for Kimst Hospital which provides services for patients and also track the patients medical profile associated with the doctors and professionals.It helps the patients to book for appointments for consulting the desired medical care professionals and helps hi track and manage his booking.",
       languages: [
         {
           name: "Python",
@@ -617,7 +636,7 @@ const projects = {
       name: "Comet",
       url: "https://www.mindspace.cf/",
       description:
-        "This is a social media application for doctors.It provides live chatting and feed sharing and other features.",
+        "Social networking app designed for doctors and health care professionals to stay upto date on medical news and updates.The app allows the health care professionals to create posts and also upload videos,images and documents to connect with other professionals.The app provides zoom video connect feature to connect with other doctors of higher background to understand and discuss various health related discussions.",
       languages: [
         {
           name: "ReactJS",
@@ -634,7 +653,7 @@ const projects = {
       name: "Skyline Tracking App",
       url: "https://github.com/vvHacker007/Youtube-Downloader/",
       description:
-        "A mobile application for tracking live vehicles and access to real time commands and location features.",
+        "Providing Skyline asset management clients (only) with remote access to their assets and fleets. Supporting real time location, reporting and asset control features.Skyline’s remote asset management systems allow a range of alerts to be sent to an internal or external 24/7 operations room, empowering them with the information they need to take decisive action.",
       languages: [
         {
           name: "ReactJS",
@@ -648,10 +667,10 @@ const projects = {
     },
     {
       id: "5",
-      name: "X-fly Insights Management",
-      url: "https://github.com/vvHacker007/Event-Scheduler",
+      name: "Delibo Delivery App",
+      url: "https://github.com/vvHacker007/Youtube-Downloader/",
       description:
-        "It is an all-purpose application for medical and health services.",
+        "Delivery application for Delibo where the delivery agents can track and manage customers orders to deliver the item.With the help of delivery application ,businesses can handle large amounts of orders while saving time and resources.",
       languages: [
         {
           name: "ReactJS",
@@ -668,7 +687,7 @@ const projects = {
       name: "Health Fabric",
       url: "https://github.com/vvHacker007/Notepad",
       description:
-        "Made a GUI based Notepad. Also made an executable file for the project which can be downloaded and used by anyone on their personal computer.",
+        "Unity from Health Fabric provides a multilingual service for people to manage their health and wellness. Health professionals from a range of health disciplines create health and wellness plans which can be followed by users to improve the quality of their lives. The app enables users to create social circles of health and wellness support by inviting friends, family and clinicians to view their data and provide them ongoing support. This is further complemented by premium support services for the user including virtual consultations.",
       languages: [
         {
           name: "Python",
@@ -682,7 +701,7 @@ const projects = {
       name: "OCR Scan Easyish",
       url: "https://github.com/vvHacker007/Steganography",
       description:
-        "A CLI tool to conceal messages within a file, text, image, or video.",
+        "Its an OCR tool for finding texts in an image which is specifically designed for zerone organisation.It also provides extra features like generating a PDF file from converted texts and also helps the user to share his texts or pdf file to other applications on the users specific devices.",
       languages: [
         {
           name: "Python",
@@ -698,7 +717,8 @@ const projects = {
       id: "8",
       name: "Lifetoken",
       url: "https://github.com/vvHacker007/Login-Authenticator",
-      description: "Made a template for a Login Authenticator using Flask ",
+      description:
+        "Lifetoken is your audience management tool to fuel engagement. Use Lifetoken to inspire and excite your audience. Connect with your most engaged followers, uncover hidden treasure in your fanbase, and encourage your passive audience to engage with you.",
       languages: [
         {
           name: "ReactJS",
@@ -715,7 +735,7 @@ const projects = {
       name: "Spendable App",
       url: "https://github.com/vvHacker007/Calculator",
       description:
-        "Made a GUI based Calculator. Also made an executable file for the project which can be downloaded and used by anyone on their personal computer.",
+        "SpendAble is the worlds first debit card meeting the payment needs of people with disability and elderly people. The platform focuses on increasing financial independence through capacity building, supported decision making and skill development. The card network allows participants to connect trusted support workers to their money in a safe, auditable way that doesn’t require a participant to hand over their personal cash or debit card. This increases a participants ability to know and control who is spending their money and on what at all times. SpendAble's core utility focuses on: - Participant financial skill development and capacity building - Smarter shared payments that enable safer community access - 1 on 1 and group support environments - SIL and group home expense management - Service provider business expense solutions",
       languages: [
         {
           name: "Python",
@@ -729,7 +749,7 @@ const projects = {
       name: "CaseTrack App",
       url: "https://github.com/vvHacker007/Mini-Paint",
       description:
-        "An application for lawyer based companies that can manage case reports.",
+        "CaseTrack is an end-to-end tool for recording and tracking cases specifically designed for law firms, as well as in-house legal departments.",
       languages: [
         {
           name: "Python",
@@ -742,7 +762,7 @@ const projects = {
       name: "Recruit Online",
       url: "https://github.com/vvHacker007/Speed-test",
       description:
-        "An internet speed testing application which can notify about the download speed, upload speed, and also the reaction time of the connection.",
+        "RecruitOnline manages the complete recruitment life cycle by providing an all-in-one recruitment platform that gives a single view of the business. This allows a business to nurture candidates and clients more efficiently.",
       languages: [
         {
           name: "Python",
