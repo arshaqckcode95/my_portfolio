@@ -29,14 +29,14 @@ function Education(props) {
                 className="experience-header-detail-text subTitle"
                 style={{ color: theme.secondaryText }}
               >
-                I actively participate in hackathons and other tech-related
-                activities
+                I am a B.Tech graduate in C.S.E, who have done internship in
+                React Native and actively participated in various programs.
               </p>
             </div>
           </div>
         </Fade>
         <Educations theme={props.theme} />
-        {/* <Certifications theme={props.theme} /> */}
+        <Certifications theme={props.theme} />
       </div>
       <Footer theme={props.theme} />
     </div>

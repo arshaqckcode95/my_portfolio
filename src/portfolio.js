@@ -14,17 +14,18 @@ const greeting = {
   logo_name: "Arshaq.ck()",
   // nickname: "harry / picleric",
   full_name: "Arshaq ck",
-  subTitle: "Mobile App Developer, React Native Enthusiast, Life Long Learner.",
+  subTitle:
+    "Senior Software Engineer, React Native Enthusiast , Hybrid Mobile Appp Developer (Android & iOS).",
   resumeLink:
-    "https://drive.google.com/file/d/1wrkG62HyDgbUOjNxexCT891tcqd83_cK/view?usp=sharing",
-  mail: "mailto:arshaqueck@gmail.com@gmail.com",
+    "https://drive.google.com/file/d/1F8trTwYuH3kRoZFIRTxqsk_wg4NWKXyn/view?usp=sharing",
+  mail: "mailto:arshaqueck@gmail.com",
 };
 
 const socialMediaLinks = {
   /* Your Social Media Link */
   github: "https://github.com/arshaqckcode95/",
   linkedin: "https://www.linkedin.com/in/arshaq-ck-187150160/",
-  gmail: "arshaqueck@gmail.com",
+  gmail: "mailto:arshaqueck@gmail.com",
   // gitlab: "https://gitlab.com/harikanani",
   facebook: "https://www.facebook.com/arshaq.ck/",
   twitter: "https://twitter.com/arsh1087/",
@@ -34,38 +35,18 @@ const socialMediaLinks = {
 const skills = {
   data: [
     {
-      title: "Mobile App Development",
+      title: "Skills & Tools",
       fileName: "FullStackImg",
       skills: [
         "⚡ Develop highly interactive User Interfaces for Mobile Applications",
         "⚡ Building and uploading applications for both IOS and Android.",
-        "⚡ Integration of third party services such as Firebase",
+        "⚡ Integration of third party services such as Firebase , AWS , Social media authentication ,SQLITE ,Redux ,Google Map API's and other features",
+        "⚡ Propose & Implement technical solutions for complex problems",
+        "⚡ Plan source code structure & reviewing source codes",
       ],
       softwareSkills: [
-        // {
-        //   skillName: "HTML5",
-        //   fontAwesomeClassname: "simple-icons:html5",
-        //   style: {
-        //     color: "#E34F26",
-        //   },
-        // },
         {
-          skillName: "CSS3",
-          fontAwesomeClassname: "fa-css3",
-          style: {
-            color: "#1572B6",
-          },
-        },
-
-        // {
-        //   skillName: "Bootstrap",
-        //   fontAwesomeClassname: "simple-icons:bootstrap",
-        //   style: {
-        //     color: "#563d7c",
-        //   },
-        // },
-        {
-          skillName: "ReactJS",
+          skillName: "React Native",
           fontAwesomeClassname: "simple-icons:react",
           style: {
             color: "#61DAFB",
@@ -80,10 +61,11 @@ const skills = {
           },
         },
         {
-          skillName: "NodeJS",
-          fontAwesomeClassname: "simple-icons:node-dot-js",
+          skillName: "Typescript",
+          fontAwesomeClassname: "simple-icons:typescript",
           style: {
-            color: "#339933",
+            backgroundColor: "#FFFFFF",
+            color: "#1572B6",
           },
         },
         {
@@ -94,96 +76,47 @@ const skills = {
           },
         },
         {
-          skillName: "Flask",
-          fontAwesomeClassname: "simple-icons:flask",
-          style: {
-            color: "#000000",
-          },
-        },
-        {
-          skillName: "Django",
-          fontAwesomeClassname: "simple-icons:django",
-          style: {
-            color: "#0c4b33",
-          },
-        },
-        {
-          skillName: "MongoDB",
-          fontAwesomeClassname: "simple-icons:mongodb",
-          style: {
-            color: "#439743",
-          },
-        },
-        {
-          skillName: "GraphQL",
-          fontAwesomeClassname: "simple-icons:graphql",
-          style: {
-            color: "#DE33A6",
-          },
-        },
-        {
           skillName: "Android",
           fontAwesomeClassname: "simple-icons:android",
           style: {
             color: "#3DDC84",
           },
         },
-        // {
-        //   skillName: "Java",
-        //   fontAwesomeClassname: "simple-icons:java",
-        //   style: {
-        //     color: "#f89820",
-        //   },
-        // },
-        // {
-        //   skillName: "Flutter",
-        //   fontAwesomeClassname: "simple-icons:flutter",
-        //   style: {
-        //     color: "#02569B",
-        //   },
-        // },
-        // {
-        //   skillName: "Dart",
-        //   fontAwesomeClassname: "simple-icons:dart",
-        //   style: {
-        //     color: "#29B0EE",
-        //   },
-        // },
-        // {
-        //   skillName: "Linux",
-        //   fontAwesomeClassname: "simple-icons:linux",
-        //   style: {
-        //     color: "#000000",
-        //   },
-        // },
-        // {
-        //   skillName: "MySQL",
-        //   fontAwesomeClassname: "simple-icons:mysql",
-        //   style: {
-        //     color: "#4479A1",
-        //   },
-        // },
-        // {
-        //   skillName: "jQuery",
-        //   fontAwesomeClassname: "simple-icons:jquery",
-        //   style: {
-        //     color: "#0865A6",
-        //   },
-        // },
-        // {
-        //   skillName: "Wordpress",
-        //   fontAwesomeClassname: "simple-icons:wordpress",
-        //   style: {
-        //     color: "#207297",
-        //   },
-        // },
-        // {
-        //   skillName: "Apache",
-        //   fontAwesomeClassname: "simple-icons:apache",
-        //   style: {
-        //     color: "#CA1A22",
-        //   },
-        // },
+        {
+          skillName: "iOS",
+          fontAwesomeClassname: "simple-icons:ios",
+          style: {
+            color: "#292a2d",
+          },
+        },
+        {
+          skillName: "React",
+          fontAwesomeClassname: "simple-icons:react",
+          style: {
+            color: "#61DAFB",
+          },
+        },
+        {
+          skillName: "HTML5",
+          fontAwesomeClassname: "simple-icons:html5",
+          style: {
+            color: "#E34F26",
+          },
+        },
+        {
+          skillName: "CSS",
+          fontAwesomeClassname: "fa-css3",
+          style: {
+            color: "#1572B6",
+          },
+        },
+        {
+          skillName: "SQLite",
+          fontAwesomeClassname: "simple-icons:sqlite",
+          style: {
+            color: "#4479A1",
+          },
+        },
         {
           skillName: "Git",
           fontAwesomeClassname: "simple-icons:git",
@@ -191,27 +124,6 @@ const skills = {
             color: "#E94E32",
           },
         },
-        {
-          skillName: "C",
-          fontAwesomeClassname: "simple-icons:c",
-          style: {
-            color: "#E94E32",
-          },
-        },
-        {
-          skillName: "C++",
-          fontAwesomeClassname: "simple-icons:cplusplus",
-          style: {
-            color: "#E94E32",
-          },
-        },
-        // {
-        //   skillName: "Python",
-        //   fontAwesomeClassname: "simple-icons:python",
-        //   style: {
-        //     color: "#3776AB",
-        //   },
-        // },
       ],
     },
     // {
@@ -293,12 +205,11 @@ const degrees = {
       alt_name: "SSEC",
       duration: "2014 - 2018",
       descriptions: [
-        "⚡  I have completed my Bachelors in Computer Science and Engineering.",
+        "⚡ I have completed my Bachelors in Computer Science and Engineering.",
         "⚡ I have studied core subjects like Data Structures, DBMS, Networking, Security, etc.",
-        // "⚡ I have also completed various online courses for Backend , Web , Mobile App Development, etc.",
-        // "⚡ I have implemented several projects based on what I've leart under my Computer Engineering course. ",
+        "⚡ I have implemented several projects based on what I've leart under my Computer Engineering course. ",
       ],
-      website_link: "https://www.srmist.edu.in/",
+      website_link: "https://www.annauniv.edu/",
     },
   ],
 };
@@ -306,107 +217,31 @@ const degrees = {
 const certifications = {
   certifications: [
     {
-      title: "Google Cloud",
-      subtitle: "Google Cloud Training",
-      logo_path: "google_logo.png",
+      title: "B TECH Certificate",
+      subtitle: "Anna University",
+      logo_path: "SRM_Logo.jpeg",
       certificate_link:
-        "https://drive.google.com/file/d/1r0hYt8Pp0N0u_4Tg-poMF1Qv3LkoKVAP/view",
-      alt_name: "MongoDB University",
-      // color_code: "#2AAFED",
+        "https://drive.google.com/file/d/1ncW2k_Dw9ybw_hsX2xyT8dvY1gO5Ur7c/view?usp=sharing",
+      alt_name: "Anna University",
       color_code: "#2AAFED",
     },
     {
-      title: "Hackathon",
-      subtitle: "Backyard Hacks 2.0",
-      logo_path: "hackathon1.png",
-      // certificate_link:
-      //   "https://drive.google.com/file/d/1Y-HT1flWDfeyfnfqVr3ubNgGIcnuUEYt/view?usp=sharing",
-      alt_name: "hackathon",
+      title: "BTECH Provisional Certificate",
+      subtitle: "Anna University",
+      logo_path: "SRM_Logo.jpeg",
+      certificate_link:
+        "https://drive.google.com/file/d/1a4a2hk5ORi6GKwgj9fwrnEfXXPRNZS_6/view?usp=sharing",
+      alt_name: "hse",
+      color_code: "#C5E2EE",
+    },
+    {
+      title: "HSE Certificate (12th)",
+      subtitle: "Govt of Kerala",
+      logo_path: "hse_logo.jpeg",
+      certificate_link:
+        "https://drive.google.com/file/d/1_ndQWbuBPX9ISxJRhvL6BnLKjN6EP-Hg/view?usp=sharing",
+      alt_name: "hse",
       color_code: "#f47e2c",
-    },
-    {
-      title: "Hackathon",
-      subtitle: "HyperHacks",
-      logo_path: "hackathon2.png",
-      // certificate_link:
-      //   "https://drive.google.com/file/d/1Y-HT1flWDfeyfnfqVr3ubNgGIcnuUEYt/view?usp=sharing",
-      alt_name: "hackathon",
-      color_code: "#E2405F",
-    },
-    // {
-    //   title: "A300: Atlas Security",
-    //   subtitle: "MongoDB University",
-    //   logo_path: "mongo.png",
-    //   certificate_link:
-    //     "https://drive.google.com/file/d/12u_tkvhgB-K2TIm-RDdJOwYbQ9ccqiqA/view?usp=sharing",
-    //   alt_name: "MongoDB University",
-    //   // color_code: "#F6B808",
-    //   color_code: "#47A048",
-    // },
-    {
-      title: "Contributor's Hack",
-      subtitle: "Hakin Codes",
-      logo_path: "HakinCodes.jfif",
-      certificate_link:
-        "https://drive.google.com/file/d/1xvyy1M05lQN-s2VKw_Qvz6E7rPwrK2qm/view?usp=sharing",
-      alt_name: "Opensource Event",
-      color_code: "#fefd7b",
-    },
-    // {
-    //   title: "MLH Local Hack Day: Build",
-    //   subtitle: "Major League Hacking",
-    //   logo_path: "mlh-logo.svg",
-    //   certificate_link:
-    //     "https://drive.google.com/file/d/1ws7g2Oepu76vDFir6SvR_emFAMSkB2ZQ/view?usp=sharing",
-    //   alt_name: "Google",
-    //   color_code: "#fe0037",
-    // },
-    {
-      title: "Olympiad",
-      subtitle: "Ramanujan Mathematics Olympiad",
-      logo_path: "Olympiad.png",
-      certificate_link:
-        "https://drive.google.com/file/d/1SAKHjKisJIY3-FRZQGKLusdsGDusXAjX/view",
-      alt_name: "Postman",
-      // color_code: "#f36c3d",
-      color_code: "#fffbf3",
-    },
-    {
-      title: "Competitive Programming",
-      subtitle: "Reply Challenges",
-      logo_path: "Reply.jfif",
-      certificate_link:
-        "https://drive.google.com/file/d/1KamrXJPTrF3zfMuEerbSnFUjOkt-agKT/view",
-      alt_name: "Reply",
-      color_code: "#2AAFED",
-    },
-    {
-      title: "Competitive Programming",
-      subtitle: "Google Hash Code",
-      logo_path: "google_logo.png",
-      certificate_link:
-        "https://drive.google.com/file/d/1sD6GS8f2Fh5MHMWlf5DhXoMhu4mykW-f/view",
-      alt_name: "Reply",
-      color_code: "#2AAFED",
-    },
-    {
-      title: "Training",
-      subtitle: "30 Days of Open Source",
-      logo_path: "CFC.jfif",
-      certificate_link:
-        "https://drive.google.com/file/d/1SAKHjKisJIY3-FRZQGKLusdsGDusXAjX/view",
-      alt_name: "Postman",
-      // color_code: "#f36c3d",
-      color_code: "#a60000",
-    },
-    {
-      title: "Training",
-      subtitle: "Git Learning",
-      logo_path: "Progate.png",
-      certificate_link:
-        "https://drive.google.com/file/d/1sD6GS8f2Fh5MHMWlf5DhXoMhu4mykW-f/view",
-      alt_name: "Reply",
-      color_code: "#88e7ce",
     },
     // color_code: "#8C151599",
     // color_code: "#7A7A7A",
@@ -423,9 +258,9 @@ const certifications = {
 // Experience Page
 const experience = {
   title: "Experience",
-  subtitle: "Work, Internship and Volunteership",
+  subtitle: "",
   description:
-    "I've completed one internship. I've mostly done projects on my own and I am actively looking for internships. I love organizing workshops to share my knowledge with others.",
+    "I've 5+ years of experience in React Native and worked over 17+ projects throughout my career.I've deployed more than 10+ apps on both Android and iOS.Also i have worked in React for developing Web apps.",
   header_image_path: "experience.svg",
   sections: [
     {
@@ -435,7 +270,7 @@ const experience = {
           title: "Senior software engineer",
           company: "QSS Technosoft",
           company_url: "https://www.qsstechnosoft.com/",
-          logo_path: "Technocolabs.jfif",
+          logo_path: "Qss_logo.jpeg",
           duration: "Jul 2022 - Present",
           location: "Noida , Uttar Pradesh , India",
           description: "Developing Applications for both Android and IOS.",
@@ -446,7 +281,7 @@ const experience = {
           title: "Senior Software Engineer",
           company: "Zerone Consulting Pvt Ltd",
           company_url: "https://technocolabs.com/",
-          logo_path: "Technocolabs.jfif",
+          logo_path: "Zerone_logo.jpeg",
           duration: "October 2020 - July 2022",
           location: "Cochin , kerala, India",
           description: "Developing Applications for both Android and IOS.",
@@ -457,7 +292,7 @@ const experience = {
           title: "Junior Software Engineer",
           company: "Sysboon Technologies",
           company_url: "",
-          logo_path: "Technocolabs.jfif",
+          logo_path: "Sysboon_logo.jpeg",
           duration: "October 2019 - October 2020",
           location: "Kozhikode , kerala, India",
           description: "Developing Applications for both Android and IOS.",
