@@ -3,7 +3,7 @@ import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import ProjectCard from "../../components/ProjectCard/ProjectCard";
 import { Fade } from "react-reveal";
-import { projectsHeader, projects } from "../../portfolio.js";
+import { projectsHeader, projects, socialMediaLinks } from "../../portfolio.js";
 import "./Projects.css";
 import ProjectsImg from "./ProjectsImg";
 import { style } from "glamor";
@@ -11,6 +11,7 @@ import { style } from "glamor";
 function Projects(props) {
   const theme = props.theme;
 
+  const projectData = projects?.data?.reverse();
   const styles = style({
     backgroundColor: `${theme.accentBright}`,
     ":hover": {
@@ -45,20 +46,16 @@ function Projects(props) {
         </Fade>
       </div>
       <div className="repo-cards-div-main">
-        {projects.data.map((repo) => {
+        {projectData.map((repo) => {
           return <ProjectCard repo={repo} theme={theme} />;
         })}
       </div>
       <br />
       <br />
       <br />
-      {/* <a
-        {...styles}
-        className="general-btn"
-        href="https://github.com/vvHacker007/"
-      >
+      <a {...styles} className="general-btn" href={socialMediaLinks?.github}>
         More Projects (Github)
-      </a> */}
+      </a>
       <br />
       <br />
       <Footer theme={props.theme} onToggle={props.onToggle} />

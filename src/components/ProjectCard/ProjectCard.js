@@ -18,6 +18,7 @@ export default function ProjectCard({ repo, theme }) {
     cursor: "pointer",
     borderRadius: "5px",
     height: "100%",
+    overflow: "hidden",
     transition: "all 0.2s ease-in-out",
     ":hover": {
       boxShadow: `${theme.imageDark} 0 2px 15px`,
@@ -30,7 +31,7 @@ export default function ProjectCard({ repo, theme }) {
         <div
           {...styles}
           key={repo.id}
-          onClick={() => openRepoinNewTab(repo.url)}
+          // onClick={() => openRepoinNewTab(repo.url)}
           style={{ backgroundColor: theme.projectCard }}
         >
           <div className="repo-name-div">

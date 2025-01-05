@@ -12,7 +12,6 @@ const greeting = {
   title: "Hello 👋.",
   title2: "Arshaq",
   logo_name: "Arshaq.ck()",
-  // nickname: "harry / picleric",
   full_name: "Arshaq ck",
   subTitle:
     "Senior Software Engineer, React Native Enthusiast , Hybrid Mobile Appp Developer (Android & iOS).",
@@ -39,7 +38,8 @@ const skills = {
       fileName: "FullStackImg",
       skills: [
         "⚡ Develop highly interactive User Interfaces for Mobile Applications",
-        "⚡ Building and uploading applications for both IOS and Android.",
+        "⚡ Building and uploading applications for both IOS and Android",
+        "⚡ Building app with Expo and EAS services",
         "⚡ Integration of third party services such as Firebase , AWS , Social media authentication ,SQLITE ,Redux ,Google Map API's and other features",
         "⚡ Propose & Implement technical solutions for complex problems",
         "⚡ Plan source code structure & reviewing source codes",
@@ -73,6 +73,13 @@ const skills = {
           fontAwesomeClassname: "simple-icons:npm",
           style: {
             color: "#CB3837",
+          },
+        },
+        {
+          skillName: "Expo",
+          fontAwesomeClassname: "simple-icons:expo",
+          style: {
+            color: "#292a2d",
           },
         },
         {
@@ -126,73 +133,6 @@ const skills = {
         },
       ],
     },
-    // {
-    //   title: "Cloud Infra-Architecture",
-    //   fileName: "CloudInfraImg",
-    //   skills: [
-    //     "⚡ Experience working on multiple cloud platforms",
-    //     "⚡ Experience hosting and managing websites",
-    //     "⚡ Experience with Continuous Integration",
-    //   ],
-    //   softwareSkills: [
-    //     {
-    //       skillName: "AWS",
-    //       fontAwesomeClassname: "simple-icons:amazonaws",
-    //       style: {
-    //         color: "#FF9900",
-    //       },
-    //     },
-    //     {
-    //       skillName: "Netlify",
-    //       fontAwesomeClassname: "simple-icons:netlify",
-    //       style: {
-    //         color: "#38AFBB",
-    //       },
-    //     },
-    //     {
-    //       skillName: "Heroku",
-    //       fontAwesomeClassname: "simple-icons:heroku",
-    //       style: {
-    //         color: "#6863A6",
-    //       },
-    //     },
-    //     {
-    //       skillName: "Firebase",
-    //       fontAwesomeClassname: "simple-icons:firebase",
-    //       style: {
-    //         color: "#FFCA28",
-    //       },
-    //     },
-    //     {
-    //       skillName: "PostgreSQL",
-    //       fontAwesomeClassname: "simple-icons:postgresql",
-    //       style: {
-    //         color: "#336791",
-    //       },
-    //     },
-    //     {
-    //       skillName: "MongoDB",
-    //       fontAwesomeClassname: "simple-icons:mongodb",
-    //       style: {
-    //         color: "#47A248",
-    //       },
-    //     },
-    //     // {
-    //     //   skillName: "Docker",
-    //     //   fontAwesomeClassname: "simple-icons:docker",
-    //     //   style: {
-    //     //     color: "#1488C6",
-    //     //   },
-    //     // },
-    //     {
-    //       skillName: "GitHub Actions",
-    //       fontAwesomeClassname: "simple-icons:githubactions",
-    //       style: {
-    //         color: "#5b77ef",
-    //       },
-    //     },
-    //   ],
-    // },
   ],
 };
 
@@ -273,8 +213,8 @@ const experience = {
           logo_path: "Qss_logo.jpeg",
           duration: "Jul 2022 - Present",
           location: "Noida , Uttar Pradesh , India",
-          description: "Developing Applications for both Android and IOS.",
-          // "Created Front end of Yearn Financial Mutual Funds website. also degined simple web application for better user experience, designed DB Schemas as well.",
+          description:
+            "Role: Build, develop, deploy and test hybrid mobile applications and services by 3rd party library integration for their enterprise platform.",
           color: "#ee3c26",
         },
         {
@@ -284,8 +224,8 @@ const experience = {
           logo_path: "Zerone_logo.jpeg",
           duration: "October 2020 - July 2022",
           location: "Cochin , kerala, India",
-          description: "Developing Applications for both Android and IOS.",
-          // "I worked on the Dashboard project which helps users track their activities while using Walo Application. I also worked on Ocean Inventory Application and it's Admin panel Backend as well as on Ocean Inventory Admin Front-end using React and also worked on Walo Admin Backend.",
+          description:
+            "Role: Build, develop, deploy and test hybrid mobile applications and services by 3rd party library integration for their enterprise platform.",
           color: "#0071C5",
         },
         {
@@ -295,83 +235,11 @@ const experience = {
           logo_path: "Sysboon_logo.jpeg",
           duration: "October 2019 - October 2020",
           location: "Kozhikode , kerala, India",
-          description: "Developing Applications for both Android and IOS.",
-          // "I worked on the Dashboard project which helps users track their activities while using Walo Application. I also worked on Ocean Inventory Application and it's Admin panel Backend as well as on Ocean Inventory Admin Front-end using React and also worked on Walo Admin Backend.",
+          description: "Role: Develop hybrid mobile applications.",
           color: "#0071C5",
         },
       ],
     },
-    // {
-    //   title: "Volunteerships",
-    //   experiences: [
-    //     {
-    //       title: "R&D Member",
-    //       company: "Webarch Club",
-    //       company_url: "https://www.webarchsrm.com/",
-    //       logo_path: "Webarch.jfif",
-    //       duration: "Mar 2020 - Nov 2020",
-    //       location: "SRM IST Kattankulathur",
-    //       description:
-    //         "Member responsibilities were to help students in project planning, review issues and pull requests, ensure smooth progress and help juniors out in their difficulties.",
-    //       color: "#4285F4",
-    //     },
-    //     {
-    //       title: "Campus Leader",
-    //       company: "Code For Cause",
-    //       company_url: "https://www.codecau.se/",
-    //       logo_path: "CFC.jfif",
-    //       duration: "Nov 2020 - Present",
-    //       location: "SRM IST Kattankulathur",
-    //       description:
-    //         "Held numerous workshops and distributed learning content for freshers. Contributed to development of the causefolio website displaying the information about the Code for Cause Community.",
-    //       color: "#a60000",
-    //     },
-    //     {
-    //       title: "Machine Learning - Research associate",
-    //       company: "Next Tech Lab",
-    //       company_url: "https://nextech.io/",
-    //       logo_path: "NTL.jfif",
-    //       duration: "Oct 2020 - Present",
-    //       location: "SRM IST Kattankulathur",
-    //       description:
-    //         "Associate responsibilities were to build fast and efficient machine learning models, have talks on research topics related to computer vision and deep learning. Build team projects and intract with fellow members and ensure smooth progress and help juniors out in their difficulties.",
-    //       color: "#62cff0",
-    //     },
-    //     {
-    //       title: "Campus Ambassador",
-    //       company: "Bagcampus",
-    //       company_url: "https://bagcampus.in/",
-    //       logo_path: "Bagcampus.jpg",
-    //       duration: "Dec 2020 - May 2021",
-    //       location: "Remote",
-    //       description:
-    //         "Spread Awareness of new Technologies and Companies and new Opportunities to Students and Grow Bagcampus Community.",
-    //       color: "#0059c9",
-    //     },
-    //     {
-    //       title: "Volunteer",
-    //       company: "Google Crowdsource",
-    //       company_url: "https://indiaenvironment.org/",
-    //       logo_path: "GCS.jfif",
-    //       duration: "Sept 2020 - Present",
-    //       location: "Remote",
-    //       description:
-    //         "As a member of the global Crowdsource community one can gain recognition from other Crowdsourcers and Google.",
-    //       color: "#ffffff",
-    //     },
-    //     {
-    //       title: "Student Volunteer",
-    //       company: "National Service Scheme",
-    //       company_url: "https://indiaenvironment.org/",
-    //       logo_path: "NSS.jfif",
-    //       duration: "Dec 2019 - May 2020",
-    //       location: "SRM IST Kattankulathur",
-    //       description:
-    //         "Take time out over weekends to join a gang of nation builders, nature enthusiasts to conserve what is left.",
-    //       color: "#282b6c",
-    //     },
-    //   ],
-    // },
   ],
 };
 
@@ -410,334 +278,401 @@ const projects = {
         "GoPath is a health care management application where customers can book for an apponitment for any laboratary tests at specific slots.It allows to manage and track the users booking and provides necessary needs for the tests required.It is the perfect pocket tool for medical laboratory tests and enables you to browse through a huge library of common lab tests to find out more about clinical laboratory values",
       languages: [
         {
-          name: "ReactJS",
+          name: "React Native",
           iconifyClass: "logos-react",
         },
         {
           name: "JavaScript",
           iconifyClass: "logos-javascript",
         },
+        {
+          name: "Android",
+          iconifyClass: "ant-design:android-filled",
+        },
+        {
+          name: "iOS",
+          iconifyClass: "ant-design:apple-filled",
+        },
       ],
     },
     {
-      id: "0",
+      id: "1",
       name: "GoPath Agent",
       url: "https://github.com/vvHacker007/Tune-In",
       description:
         "Online Aggregator Platform which connects labs to patients by optimising end to end supply chain and providing services of certified phlebotomists for Home Collection of all Lab Test Samples from anywhere and at any time to the patient's preferred lab.It allows Phlebotomists to receive the Lab Test Booking details of patients that book their Lab Test via Curelo App / Website as well as the patients assigned directly by the Admin. The Phlebotomists will be able to update the status for the Home Sample Collection on the App, allowing the Admin to keep a record of the Sample Collection Process.",
       languages: [
         {
-          name: "ReactJS",
+          name: "React Native",
           iconifyClass: "logos-react",
         },
         {
           name: "JavaScript",
           iconifyClass: "logos-javascript",
         },
+        {
+          name: "Android",
+          iconifyClass: "ant-design:android-filled",
+        },
+        {
+          name: "iOS",
+          iconifyClass: "ant-design:apple-filled",
+        },
       ],
     },
     {
-      id: "1",
+      id: "2",
       name: "Delibo",
       url: "https://github.com/vvHacker007/Movie-Recommendation-Systems",
       description:
         "Delibo is an online grocery shopping app where users can purchase and order groceries online.users can create an account for browsing the list of necessary grocery items and make an order of the item to his desired location.The app allows online payment integration which helps the user to pay for the items at the time of ordering.",
       languages: [
         {
-          name: "ReactJS",
+          name: "React Native",
           iconifyClass: "logos-react",
         },
         {
           name: "JavaScript",
           iconifyClass: "logos-javascript",
         },
-      ],
-    },
-    {
-      id: "2",
-      name: "Kimst Hospital App",
-      url: "https://github.com/vvHacker007/Tetris",
-      description:
-        "App for Kimst Hospital which provides services for patients and also track the patients medical profile associated with the doctors and professionals.It helps the patients to book for appointments for consulting the desired medical care professionals and helps hi track and manage his booking.",
-      languages: [
         {
-          name: "Python",
-          iconifyClass: "logos-python",
+          name: "Android",
+          iconifyClass: "ant-design:android-filled",
+        },
+        {
+          name: "iOS",
+          iconifyClass: "ant-design:apple-filled",
         },
       ],
     },
     {
       id: "3",
-      name: "Comet",
-      url: "https://www.mindspace.cf/",
-      description:
-        "Social networking app designed for doctors and health care professionals to stay upto date on medical news and updates.The app allows the health care professionals to create posts and also upload videos,images and documents to connect with other professionals.The app provides zoom video connect feature to connect with other doctors of higher background to understand and discuss various health related discussions.",
-      languages: [
-        {
-          name: "ReactJS",
-          iconifyClass: "logos-react",
-        },
-        {
-          name: "JavaScript",
-          iconifyClass: "logos-javascript",
-        },
-      ],
-    },
-    {
-      id: "4",
-      name: "Skyline Tracking App",
-      url: "https://github.com/vvHacker007/Youtube-Downloader/",
-      description:
-        "Providing Skyline asset management clients (only) with remote access to their assets and fleets. Supporting real time location, reporting and asset control features.Skyline’s remote asset management systems allow a range of alerts to be sent to an internal or external 24/7 operations room, empowering them with the information they need to take decisive action.",
-      languages: [
-        {
-          name: "ReactJS",
-          iconifyClass: "logos-react",
-        },
-        {
-          name: "JavaScript",
-          iconifyClass: "logos-javascript",
-        },
-      ],
-    },
-    {
-      id: "5",
       name: "Delibo Delivery App",
       url: "https://github.com/vvHacker007/Youtube-Downloader/",
       description:
         "Delivery application for Delibo where the delivery agents can track and manage customers orders to deliver the item.With the help of delivery application ,businesses can handle large amounts of orders while saving time and resources.",
       languages: [
         {
-          name: "ReactJS",
+          name: "React Native",
           iconifyClass: "logos-react",
         },
         {
           name: "JavaScript",
           iconifyClass: "logos-javascript",
         },
+        {
+          name: "Android",
+          iconifyClass: "ant-design:android-filled",
+        },
+        {
+          name: "iOS",
+          iconifyClass: "ant-design:apple-filled",
+        },
+      ],
+    },
+    {
+      id: "4",
+      name: "Kimst Hospital App",
+      url: "https://github.com/vvHacker007/Tetris",
+      description:
+        "App for Kimst Hospital which provides services for patients and also track the patients medical profile associated with the doctors and professionals.It helps the patients to book for appointments for consulting the desired medical care professionals and helps hi track and manage his booking.",
+      languages: [
+        {
+          name: "React Native",
+          iconifyClass: "logos-react",
+        },
+        {
+          name: "JavaScript",
+          iconifyClass: "logos-javascript",
+        },
+        {
+          name: "Android",
+          iconifyClass: "ant-design:android-filled",
+        },
+        {
+          name: "iOS",
+          iconifyClass: "ant-design:apple-filled",
+        },
+      ],
+    },
+    {
+      id: "5",
+      name: "Comet",
+      url: "https://www.mindspace.cf/",
+      description:
+        "Social networking app designed for doctors and health care professionals to stay upto date on medical news and updates.The app allows the health care professionals to create posts and also upload videos,images and documents to connect with other professionals.The app provides zoom video connect feature to connect with other doctors of higher background to understand and discuss various health related discussions.",
+      languages: [
+        {
+          name: "React Native",
+          iconifyClass: "logos-react",
+        },
+        {
+          name: "JavaScript",
+          iconifyClass: "logos-javascript",
+        },
+        {
+          name: "Android",
+          iconifyClass: "ant-design:android-filled",
+        },
+        {
+          name: "iOS",
+          iconifyClass: "ant-design:apple-filled",
+        },
       ],
     },
     {
       id: "6",
+      name: "Skyline Tracking App",
+      url: "https://github.com/vvHacker007/Youtube-Downloader/",
+      description:
+        "Providing Skyline asset management clients (only) with remote access to their assets and fleets. Supporting real time location, reporting and asset control features.Skyline’s remote asset management systems allow a range of alerts to be sent to an internal or external 24/7 operations room, empowering them with the information they need to take decisive action.",
+      languages: [
+        {
+          name: "React Native",
+          iconifyClass: "logos-react",
+        },
+        {
+          name: "JavaScript",
+          iconifyClass: "logos-javascript",
+        },
+        {
+          name: "Android",
+          iconifyClass: "ant-design:android-filled",
+        },
+        {
+          name: "iOS",
+          iconifyClass: "ant-design:apple-filled",
+        },
+      ],
+    },
+    {
+      id: "7",
       name: "Health Fabric",
       url: "https://github.com/vvHacker007/Notepad",
       description:
         "Unity from Health Fabric provides a multilingual service for people to manage their health and wellness. Health professionals from a range of health disciplines create health and wellness plans which can be followed by users to improve the quality of their lives. The app enables users to create social circles of health and wellness support by inviting friends, family and clinicians to view their data and provide them ongoing support. This is further complemented by premium support services for the user including virtual consultations.",
       languages: [
         {
-          name: "Python",
-          iconifyClass: "logos-python",
-        },
-      ],
-    },
-
-    {
-      id: "7",
-      name: "OCR Scan Easyish",
-      url: "https://github.com/vvHacker007/Steganography",
-      description:
-        "Its an OCR tool for finding texts in an image which is specifically designed for zerone organisation.It also provides extra features like generating a PDF file from converted texts and also helps the user to share his texts or pdf file to other applications on the users specific devices.",
-      languages: [
-        {
-          name: "Python",
-          iconifyClass: "logos-python",
-        },
-        {
-          name: "OpenCV",
-          iconifyClass: "logos-opencv",
-        },
-      ],
-    },
-    {
-      id: "8",
-      name: "Lifetoken",
-      url: "https://github.com/vvHacker007/Login-Authenticator",
-      description:
-        "Lifetoken is your audience management tool to fuel engagement. Use Lifetoken to inspire and excite your audience. Connect with your most engaged followers, uncover hidden treasure in your fanbase, and encourage your passive audience to engage with you.",
-      languages: [
-        {
-          name: "ReactJS",
+          name: "React Native",
           iconifyClass: "logos-react",
         },
         {
           name: "JavaScript",
           iconifyClass: "logos-javascript",
         },
+        {
+          name: "Android",
+          iconifyClass: "ant-design:android-filled",
+        },
+        {
+          name: "iOS",
+          iconifyClass: "ant-design:apple-filled",
+        },
+      ],
+    },
+
+    {
+      id: "8",
+      name: "OCR Scan Easyish",
+      url: "https://github.com/vvHacker007/Steganography",
+      description:
+        "Its an OCR tool for finding texts in an image which is specifically designed for zerone organisation.It also provides extra features like generating a PDF file from converted texts and also helps the user to share his texts or pdf file to other applications on the users specific devices.",
+      languages: [
+        {
+          name: "React Native",
+          iconifyClass: "logos-react",
+        },
+        {
+          name: "JavaScript",
+          iconifyClass: "logos-javascript",
+        },
+        {
+          name: "Android",
+          iconifyClass: "ant-design:android-filled",
+        },
+        {
+          name: "iOS",
+          iconifyClass: "ant-design:apple-filled",
+        },
       ],
     },
     {
       id: "9",
+      name: "Lifetoken",
+      url: "https://github.com/vvHacker007/Login-Authenticator",
+      description:
+        "Lifetoken is your audience management tool to fuel engagement. Use Lifetoken to inspire and excite your audience. Connect with your most engaged followers, uncover hidden treasure in your fanbase, and encourage your passive audience to engage with you.",
+      languages: [
+        {
+          name: "React Native",
+          iconifyClass: "logos-react",
+        },
+        {
+          name: "JavaScript",
+          iconifyClass: "logos-javascript",
+        },
+        {
+          name: "Android",
+          iconifyClass: "ant-design:android-filled",
+        },
+        {
+          name: "iOS",
+          iconifyClass: "ant-design:apple-filled",
+        },
+      ],
+    },
+    {
+      id: "10",
       name: "Spendable App",
       url: "https://github.com/vvHacker007/Calculator",
       description:
         "SpendAble is the worlds first debit card meeting the payment needs of people with disability and elderly people. The platform focuses on increasing financial independence through capacity building, supported decision making and skill development. The card network allows participants to connect trusted support workers to their money in a safe, auditable way that doesn’t require a participant to hand over their personal cash or debit card. This increases a participants ability to know and control who is spending their money and on what at all times. SpendAble's core utility focuses on: - Participant financial skill development and capacity building - Smarter shared payments that enable safer community access - 1 on 1 and group support environments - SIL and group home expense management - Service provider business expense solutions",
       languages: [
         {
-          name: "Python",
-          iconifyClass: "logos-python",
+          name: "React Native",
+          iconifyClass: "logos-react",
+        },
+        {
+          name: "JavaScript",
+          iconifyClass: "logos-javascript",
+        },
+        {
+          name: "Android",
+          iconifyClass: "ant-design:android-filled",
+        },
+        {
+          name: "iOS",
+          iconifyClass: "ant-design:apple-filled",
         },
       ],
     },
 
     {
-      id: "10",
+      id: "11",
       name: "CaseTrack App",
       url: "https://github.com/vvHacker007/Mini-Paint",
       description:
         "CaseTrack is an end-to-end tool for recording and tracking cases specifically designed for law firms, as well as in-house legal departments.",
       languages: [
         {
-          name: "Python",
-          iconifyClass: "logos-python",
+          name: "React Native",
+          iconifyClass: "logos-react",
+        },
+        {
+          name: "JavaScript",
+          iconifyClass: "logos-javascript",
+        },
+        {
+          name: "Android",
+          iconifyClass: "ant-design:android-filled",
+        },
+        {
+          name: "iOS",
+          iconifyClass: "ant-design:apple-filled",
         },
       ],
     },
     {
-      id: "11",
+      id: "12",
       name: "Recruit Online",
       url: "https://github.com/vvHacker007/Speed-test",
       description:
         "RecruitOnline manages the complete recruitment life cycle by providing an all-in-one recruitment platform that gives a single view of the business. This allows a business to nurture candidates and clients more efficiently.",
       languages: [
         {
-          name: "Python",
-          iconifyClass: "logos-python",
+          name: "React Native",
+          iconifyClass: "logos-react",
+        },
+        {
+          name: "JavaScript",
+          iconifyClass: "logos-javascript",
+        },
+        {
+          name: "Android",
+          iconifyClass: "ant-design:android-filled",
+        },
+        {
+          name: "iOS",
+          iconifyClass: "ant-design:apple-filled",
         },
       ],
     },
-    // {
-    //   id: "10",
-    //   name: "Cat Classifier",
-    //   url: "https://github.com/vvHacker007/Cat-Classifier",
-    //   description:
-    //     "Binary Cat Classifier made by hard coding Neural Networks in Python without using libraries such as Tensorflow or keras.",
-    //   languages: [
-    //     {
-    //       name: "Python",
-    //       iconifyClass: "logos-python",
-    //     },
-    //     {
-    //       name: "Jupyter Notebook",
-    //       iconifyClass: "logos-jupyter",
-    //     },
-    //   ],
-    // },
-    // {
-    //   id: "11",
-    //   name: "Snake",
-    //   url: "https://github.com/vvHacker007/Snake",
-    //   description:
-    //     "A snake game which covers all the basic features like score, high score and an automated speed increase simultaneously when the snake eats the food.",
-    //   languages: [
-    //     {
-    //       name: "Python",
-    //       iconifyClass: "logos-python",
-    //     },
-    //   ],
-    // },
-    // {
-    //   id: "12",
-    //   name: "Score Predictor",
-    //   url: "https://score-predictor-app.herokuapp.com/",
-    //   description:
-    //     "Predicts students score based on the number of hours the student puts in it.",
-    //   languages: [
-    //     {
-    //       name: "HTML5",
-    //       iconifyClass: "vscode-icons:file-type-html",
-    //     },
-    //     {
-    //       name: "CSS3",
-    //       iconifyClass: "vscode-icons:file-type-css",
-    //     },
-    //     {
-    //       name: "JavaScript",
-    //       iconifyClass: "logos-javascript",
-    //     },
-    //     {
-    //       name: "Python",
-    //       iconifyClass: "logos-python",
-    //     },
-    //     {
-    //       name: "Flask",
-    //       iconifyClass: "cib-flask",
-    //     },
-    //     {
-    //       name: "Jupyter Notebook",
-    //       iconifyClass: "logos-jupyter",
-    //     },
-    //   ],
-    // },
-    // {
-    //   id: "13",
-    //   name: "Blood Donation Predictor",
-    //   url: "https://blood-donation-predictor-app.herokuapp.com/",
-    //   description:
-    //     "Predicts if one is ready to donate blood based on the user's blood donation history.",
-    //   languages: [
-    //     {
-    //       name: "HTML5",
-    //       iconifyClass: "vscode-icons:file-type-html",
-    //     },
-    //     {
-    //       name: "CSS3",
-    //       iconifyClass: "vscode-icons:file-type-css",
-    //     },
-    //     {
-    //       name: "Python",
-    //       iconifyClass: "logos-python",
-    //     },
-    //     {
-    //       name: "Jupyter Notebook",
-    //       iconifyClass: "logos-jupyter",
-    //     },
-    //   ],
-    // },
-    // {
-    //   id: "14",
-    //   name: "Credit-Card Default Predictor",
-    //   url: "https://default-predictor-app.herokuapp.com/",
-    //   description:
-    //     "Predicts whether user's credit card would be defaulted or not based on the user's bank statements and history.",
-    //   languages: [
-    //     {
-    //       name: "HTML5",
-    //       iconifyClass: "vscode-icons:file-type-html",
-    //     },
-    //     {
-    //       name: "Python",
-    //       iconifyClass: "logos-python",
-    //     },
-    //     {
-    //       name: "Jupyter Notebook",
-    //       iconifyClass: "logos-jupyter",
-    //     },
-    //   ],
-    // },
-    // {
-    //   id: "15",
-    //   name: "Portfolio Website",
-    //   url: "https://vvhacker007.github.io/Portfolio/",
-    //   description: "You are stalking it right now 😉",
-    //   languages: [
-    //     {
-    //       name: "HTML5",
-    //       iconifyClass: "vscode-icons:file-type-html",
-    //     },
-    //     {
-    //       name: "CSS3",
-    //       iconifyClass: "vscode-icons:file-type-css",
-    //     },
-    //     {
-    //       name: "JavaScript",
-    //       iconifyClass: "logos-javascript",
-    //     },
-    //     {
-    //       name: "ReactJS",
-    //       iconifyClass: "logos-react",
-    //     },
-    //   ],
-    // },
+    {
+      id: "13",
+      name: "Litehouse Mobile App",
+      url: "https://github.com/vvHacker007/Cat-Classifier",
+      description:
+        "Litehouse is provides easy shift management for nurses in their respective client.It helps to track and manage daily shifts.",
+      languages: [
+        {
+          name: "React Native",
+          iconifyClass: "logos-react",
+        },
+        {
+          name: "TypeScript",
+          iconifyClass: "logos:typescript-icon",
+        },
+        {
+          name: "Android",
+          iconifyClass: "ant-design:android-filled",
+        },
+        {
+          name: "iOS",
+          iconifyClass: "ant-design:apple-filled",
+        },
+      ],
+    },
+    {
+      id: "14",
+      name: "Litehouse Web App",
+      url: "https://github.com/vvHacker007/Cat-Classifier",
+      description:
+        "Litehouse is provides easy shift management for nurses in their respective client.It helps to track and manage daily shifts.",
+      languages: [
+        {
+          name: "ReactJS",
+          iconifyClass: "logos-react",
+        },
+        {
+          name: "TypeScript",
+          iconifyClass: "logos:typescript-icon",
+        },
+      ],
+    },
+    {
+      id: "15",
+      name: "Litehouse Admin Web App",
+      url: "https://github.com/vvHacker007/Cat-Classifier",
+      description:
+        "Litehouse Admin app is for managing nurses and scheduler users with ease of management for shifts.Also manages the nurse documents and other onboarding process.",
+      languages: [
+        {
+          name: "ReactJS",
+          iconifyClass: "logos-react",
+        },
+        {
+          name: "TypeScript",
+          iconifyClass: "logos:typescript-icon",
+        },
+      ],
+    },
+    {
+      id: "16",
+      name: "Litehouse Scheduler Web App",
+      url: "https://github.com/vvHacker007/Cat-Classifier",
+      description:
+        "Litehouse Scheduler app can create shifts and assign the shifts respective for the nurses.",
+      languages: [
+        {
+          name: "ReactJS",
+          iconifyClass: "logos-react",
+        },
+        {
+          name: "TypeScript",
+          iconifyClass: "logos:typescript-icon",
+        },
+      ],
+    },
   ],
 };
 
