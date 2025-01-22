@@ -19,7 +19,7 @@ function CertificationCard(props) {
       <div className="cert-card" {...styles}>
         <div className="content">
           <a
-            href={certificate.certificate_link}
+            // href={certificate.certificate_link}
             target="_blank"
             rel="noopener noreferrer"
           >
