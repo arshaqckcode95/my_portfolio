@@ -1,0 +1,9 @@
+# Overrides the site settings configured in the Netlify UI.
+# Vite outputs to dist/ (the UI was set to CRA's build/).
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  # Vite 6 / Tailwind 4 require Node 18+; the UI env var is still set to 14.
+  NODE_VERSION = "20"
