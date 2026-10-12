@@ -1,100 +1,175 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { FiSun, FiMoon, FiMenu, FiX } from "react-icons/fi";
+import { useEffect, useState } from "react";
+import { AnimatePresence, motion, useScroll, useSpring } from "framer-motion";
+import { FiSun, FiMoon, FiMenu, FiX, FiArrowUpRight } from "react-icons/fi";
 import useTheme from "../hooks/useTheme.js";
-import { personal } from "../data/portfolio.js";
+import { personal, socials } from "../data/portfolio.js";
 
 const LINKS = [
-  { label: "Skills", href: "#skills" },
-  { label: "Experience", href: "#experience" },
-  { label: "Projects", href: "#projects" },
-  { label: "Education", href: "#education" },
-  { label: "Contact", href: "#contact" },
+  { index: "01", label: "Work", href: "#work" },
+  { index: "02", label: "Experience", href: "#experience" },
+  { index: "03", label: "Skills", href: "#skills" },
+  { index: "04", label: "Education", href: "#education" },
+  // { index: "05", label: "Blog", href: "#blog" }, // enable alongside the Blog section
+  { index: "05", label: "Contact", href: "#contact" },
 ];
 
 export default function Navbar() {
   const [theme, toggleTheme] = useTheme();
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  const { scrollYProgress } = useScroll();
+  const progress = useSpring(scrollYProgress, { stiffness: 140, damping: 30 });
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Lock body scroll while the overlay menu is open.
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50">
-      <nav className="mx-3 mt-3 flex max-w-6xl items-center justify-between rounded-2xl border border-slate-200/60 bg-white/70 px-4 py-2.5 backdrop-blur-xl dark:border-white/10 dark:bg-surface-900/70 sm:mx-5 lg:mx-auto">
-        <a
-          href="#top"
-          className="font-display text-lg font-bold text-slate-900 dark:text-white"
-        >
-          {personal.firstName}
-          <span className="text-accent-500">.ck</span>
-        </a>
+    <>
+      {/* Reading-progress hairline */}
+      <motion.div
+        className="fixed inset-x-0 top-0 z-[80] h-[2px] origin-left bg-flame-500"
+        style={{ scaleX: progress }}
+      />
 
-        <div className="hidden items-center gap-1 md:flex">
-          {LINKS.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              className="rounded-lg px-3 py-1.5 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-white/5 dark:hover:text-white"
-            >
-              {l.label}
-            </a>
-          ))}
-        </div>
-
-        <div className="flex items-center gap-2">
-          <button
-            onClick={toggleTheme}
-            aria-label="Toggle theme"
-            className="rounded-lg p-2 text-slate-600 transition-colors hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-white/5"
-          >
-            {theme === "dark" ? <FiSun size={18} /> : <FiMoon size={18} />}
-          </button>
+      <header
+        className={`fixed inset-x-0 top-0 z-[70] transition-all duration-300 ${
+          scrolled
+            ? "border-b border-ink-600/10 bg-paper-100/85 backdrop-blur-md dark:border-paper-200/10 dark:bg-ink-900/85"
+            : "bg-transparent"
+        }`}
+      >
+        <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 md:h-[72px] md:px-8">
           <a
-            href={personal.resume}
-            target="_blank"
-            rel="noreferrer"
-            className="hidden rounded-lg bg-accent-600 px-4 py-1.5 text-sm font-semibold text-white transition-colors hover:bg-accent-500 md:block"
+            href="#top"
+            className="font-mono text-sm uppercase tracking-[0.2em] text-ink-700 dark:text-paper-100"
           >
-            Resume
+            Arshaq<span className="text-flame-500">©</span>CK
           </a>
-          <button
-            onClick={() => setOpen((o) => !o)}
-            aria-label="Toggle menu"
-            className="rounded-lg p-2 text-slate-600 dark:text-slate-300 md:hidden"
-          >
-            {open ? <FiX size={20} /> : <FiMenu size={20} />}
-          </button>
-        </div>
-      </nav>
 
+          <ul className="hidden items-center gap-7 md:flex">
+            {LINKS.map((l) => (
+              <li key={l.href}>
+                <a
+                  href={l.href}
+                  className="link-draw font-mono text-[13px] uppercase tracking-[0.12em] text-ink-500 hover:text-ink-700 dark:text-ink-300 dark:hover:text-paper-100"
+                >
+                  <span className="text-flame-500">{l.index}.</span> {l.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          <div className="flex items-center gap-2">
+            <button
+              onClick={toggleTheme}
+              aria-label="Toggle theme"
+              className="grid h-10 w-10 place-items-center border border-ink-600/25 text-ink-500 transition-colors hover:border-flame-500 hover:text-flame-500 dark:border-paper-200/25 dark:text-paper-200"
+            >
+              {theme === "dark" ? <FiSun size={16} /> : <FiMoon size={16} />}
+            </button>
+            <a
+              href="#contact"
+              className="hidden h-10 items-center gap-1.5 bg-ink-700 px-4 font-mono text-[13px] uppercase tracking-[0.12em] text-paper-50 transition-colors hover:bg-flame-500 dark:bg-paper-100 dark:text-ink-800 dark:hover:bg-flame-500 dark:hover:text-paper-50 md:inline-flex"
+            >
+              Let's talk <FiArrowUpRight size={14} />
+            </a>
+            <button
+              onClick={() => setOpen(true)}
+              aria-label="Open menu"
+              className="grid h-10 w-10 place-items-center border border-ink-600/25 text-ink-600 dark:border-paper-200/25 dark:text-paper-200 md:hidden"
+            >
+              <FiMenu size={18} />
+            </button>
+          </div>
+        </nav>
+      </header>
+
+      {/* Full-screen mobile menu */}
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.18 }}
-            className="mx-3 mt-2 rounded-2xl border border-slate-200/60 bg-white/90 p-3 backdrop-blur-xl dark:border-white/10 dark:bg-surface-900/90 md:hidden"
+            className="fixed inset-0 z-[90] flex flex-col bg-paper-100 dark:bg-ink-900 md:hidden"
+            initial={{ clipPath: "inset(0 0 100% 0)" }}
+            animate={{ clipPath: "inset(0 0 0% 0)" }}
+            exit={{ clipPath: "inset(0 0 100% 0)" }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
           >
-            {LINKS.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
+            <div className="flex h-16 items-center justify-between px-5">
+              <span className="font-mono text-sm uppercase tracking-[0.2em] text-ink-700 dark:text-paper-100">
+                Menu
+              </span>
+              <button
                 onClick={() => setOpen(false)}
-                className="block rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-white/5"
+                aria-label="Close menu"
+                className="grid h-10 w-10 place-items-center border border-ink-600/25 text-ink-600 dark:border-paper-200/25 dark:text-paper-200"
               >
-                {l.label}
-              </a>
-            ))}
-            <a
-              href={personal.resume}
-              target="_blank"
-              rel="noreferrer"
-              className="mt-2 block rounded-lg bg-accent-600 px-3 py-2.5 text-center text-sm font-semibold text-white"
+                <FiX size={18} />
+              </button>
+            </div>
+
+            <ul className="flex flex-1 flex-col justify-center gap-2 px-6">
+              {LINKS.map((l, i) => (
+                <motion.li
+                  key={l.href}
+                  initial={{ opacity: 0, y: 24 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.15 + i * 0.07, duration: 0.45 }}
+                >
+                  <a
+                    href={l.href}
+                    onClick={() => setOpen(false)}
+                    className="group flex items-baseline gap-4 border-b border-ink-600/10 py-4 dark:border-paper-200/10"
+                  >
+                    <span className="font-mono text-xs text-flame-500">
+                      {l.index}
+                    </span>
+                    <span className="display text-4xl text-ink-700 transition-colors group-hover:text-flame-500 dark:text-paper-100">
+                      {l.label}
+                    </span>
+                  </a>
+                </motion.li>
+              ))}
+            </ul>
+
+            <motion.div
+              className="flex items-center justify-between px-6 pb-8"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
             >
-              Resume
-            </a>
+              <span className="font-mono text-xs uppercase tracking-[0.15em] text-ink-400 dark:text-ink-300">
+                {personal.location}
+              </span>
+              <div className="flex gap-4">
+                {socials.slice(0, 3).map((s) => (
+                  <a
+                    key={s.name}
+                    href={s.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="font-mono text-xs uppercase tracking-[0.15em] text-ink-500 hover:text-flame-500 dark:text-ink-300"
+                  >
+                    {s.name}
+                  </a>
+                ))}
+              </div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </>
   );
 }

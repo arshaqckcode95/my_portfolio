@@ -4,6 +4,9 @@
 /node_modules
 /.pnp
 /build
+
+# build output (published to gh-pages by `npm run deploy`)
+/dist
 .pnp.js
 package-lock.json
 # testing

@@ -1,76 +1,82 @@
-import { FiMapPin, FiExternalLink } from "react-icons/fi";
-import Section, { Reveal } from "./Section.jsx";
+import { FiArrowUpRight } from "react-icons/fi";
+import Section from "./Section.jsx";
+import SectionHeading from "./SectionHeading.jsx";
+import Reveal from "./Reveal.jsx";
 import { experience } from "../data/portfolio.js";
 
 export default function Experience() {
   return (
-    <Section
-      id="experience"
-      eyebrow="Experience"
-      title="Where I've worked"
-      intro="6+ years building and shipping hybrid mobile applications and web platforms for enterprise clients."
-    >
-      <ol className="relative space-y-10 border-l border-slate-200 pl-6 dark:border-white/10 sm:space-y-12 sm:pl-10">
+    <Section id="experience" className="bg-paper-50 dark:bg-ink-800">
+      <SectionHeading
+        index="02"
+        kicker="Career so far"
+        title="EXPERIENCE"
+        accent="on the record"
+      />
+
+      <ol>
         {experience.map((job, i) => (
-          <Reveal key={job.company} custom={i}>
-            <li className="relative">
-              <span className="absolute -left-[31px] top-1 h-2.5 w-2.5 rounded-full bg-accent-500 ring-4 ring-accent-500/20 sm:-left-[47px]" />
-              <div className="rounded-2xl border border-slate-200 bg-white p-6 transition-shadow hover:shadow-lg hover:shadow-slate-200/60 dark:border-white/10 dark:bg-surface-900 dark:hover:shadow-black/30">
-                <div className="flex flex-wrap items-start justify-between gap-4">
-                  <div className="flex items-center gap-4">
-                    <img
-                      src={job.logo}
-                      alt={job.company}
-                      className="h-12 w-12 rounded-xl object-cover ring-1 ring-slate-200 dark:ring-white/10"
-                    />
-                    <div>
-                      <h3 className="font-display text-lg font-semibold text-slate-900 dark:text-white">
-                        {job.role}
-                      </h3>
-                      <p className="flex items-center gap-1.5 text-sm font-medium text-accent-600 dark:text-accent-400">
-                        {job.url ? (
-                          <a
-                            href={job.url}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="inline-flex items-center gap-1 hover:underline"
-                          >
-                            {job.company} <FiExternalLink size={12} />
-                          </a>
-                        ) : (
-                          job.company
-                        )}
+          <Reveal key={job.company} delay={i * 0.05}>
+            <li className="group grid gap-5 border-t border-ink-600/15 py-10 dark:border-paper-200/15 md:grid-cols-[220px_1fr] md:gap-12 md:py-12">
+              {/* Ledger column: dates + place */}
+              <div className="font-mono text-xs uppercase tracking-[0.15em] text-ink-400 dark:text-ink-300">
+                <p className="text-flame-500">{job.duration}</p>
+                <p className="mt-2">{job.location}</p>
+              </div>
+
+              <div>
+                <div className="flex flex-wrap items-center gap-4">
+                  <img
+                    src={job.logo}
+                    alt={job.company}
+                    loading="lazy"
+                    className="h-12 w-12 border border-ink-600/15 object-cover grayscale transition-all duration-500 group-hover:grayscale-0 dark:border-paper-200/15"
+                  />
+                  <div>
+                    <h3 className="display text-2xl text-ink-700 dark:text-paper-100 md:text-3xl">
+                      {job.role}
+                    </h3>
+                    {job.url ? (
+                      <a
+                        href={job.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="link-draw mt-1 inline-flex items-center gap-1 font-mono text-sm text-ink-500 hover:text-flame-500 dark:text-paper-300"
+                      >
+                        {job.company} <FiArrowUpRight size={13} />
+                      </a>
+                    ) : (
+                      <p className="mt-1 font-mono text-sm text-ink-500 dark:text-paper-300">
+                        {job.company}
                       </p>
-                    </div>
-                  </div>
-                  <div className="text-right text-sm text-slate-500 dark:text-slate-400">
-                    <p className="font-mono">{job.duration}</p>
-                    <p className="mt-0.5 flex items-center justify-end gap-1">
-                      <FiMapPin size={12} /> {job.location}
-                    </p>
+                    )}
                   </div>
                 </div>
-                <ul className="mt-4 space-y-1.5 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+
+                <ul className="mt-6 max-w-2xl space-y-2.5 text-[15px] leading-relaxed text-ink-500 dark:text-paper-300">
                   {job.points.map((p) => (
-                    <li key={p} className="flex gap-2">
-                      <span className="text-accent-500">▹</span> {p}
+                    <li key={p} className="flex gap-3">
+                      <span className="mt-[2px] select-none text-flame-500">—</span>
+                      {p}
                     </li>
                   ))}
                 </ul>
-                <div className="mt-4 flex flex-wrap gap-2">
+
+                <ul className="mt-6 flex flex-wrap gap-2">
                   {job.tech.map((t) => (
-                    <span
+                    <li
                       key={t}
-                      className="rounded-full bg-accent-50 px-3 py-1 font-mono text-xs text-accent-700 dark:bg-accent-500/10 dark:text-accent-300"
+                      className="border border-ink-600/20 px-3 py-1 font-mono text-[11px] uppercase tracking-[0.12em] text-ink-500 dark:border-paper-200/20 dark:text-paper-300"
                     >
                       {t}
-                    </span>
+                    </li>
                   ))}
-                </div>
+                </ul>
               </div>
             </li>
           </Reveal>
         ))}
+        <li aria-hidden="true" className="border-t border-ink-600/15 dark:border-paper-200/15" />
       </ol>
     </Section>
   );

@@ -16,10 +16,10 @@ export const personal = {
   role: "Senior Software Engineer",
   headline: "I build cross-platform mobile apps with React Native & Expo.",
   subHeadline:
-    "Senior Software Engineer with 6+ years of experience shipping production apps to the App Store and Google Play — backed by solid React, Node.js and PostgreSQL skills for the full stack.",
+    "Senior Software Engineer specializing in React Native & Expo, with 6+ years of experience across fintech, healthcare and e-commerce — backed by full-stack depth in React, Node.js and PostgreSQL.",
   photo: profilePhoto,
   email: "arshaqueck@gmail.com",
-  location: "Noida, India",
+  location: "Kerala, India",
   resume:
     "https://drive.google.com/file/d/1F8trTwYuH3kRoZFIRTxqsk_wg4NWKXyn/view?usp=sharing",
 };
@@ -142,122 +142,172 @@ export const experience = [
   },
 ];
 
-// `image`: drop a screenshot into public/screenshots/ and reference it as
-// "screenshots/<file>.png". Cards render a branded placeholder until then.
+// Project groups shown as tabs on the home page and as sections on the
+// full index page (#/projects).
+export const projectGroups = [
+  { id: "work", label: "Work", blurb: "Client & employer builds" },
+  { id: "open-source", label: "Open Source", blurb: "Public code & contributions" },
+  { id: "hobby", label: "Hobby", blurb: "Side builds & experiments" },
+];
+
+// Each project:
+//   group       — "work" | "open-source" | "hobby" (drives tabs/sections)
+//   featured    — surfaces first on the home page tab (max 4 shown there)
+//   links       — appstore / playstore / website / github. Empty strings are
+//                 hidden in the UI, so fill in real URLs as you get them.
+//   screenshots — drop files into public/screenshots/ and list them as
+//                 "screenshots/<file>.png". The "Screens" button (and the
+//                 lightbox) only appears once a project has at least one.
 export const projects = [
   {
     name: "Spendable",
     tagline: "Fintech · Accessibility",
     category: "Mobile",
+    group: "work",
     featured: true,
     description:
       "The world's first debit card designed for people with disability and the elderly — enabling financial independence with trusted support-worker connections and fully auditable money management.",
     tech: ["React Native", "TypeScript", "iOS", "Android"],
-    image: "",
+    links: { appstore: "", playstore: "", website: "", github: "" },
+    screenshots: [],
   },
   {
     name: "Litehouse Suite",
     tagline: "Healthcare workforce · 4 apps",
     category: "Web",
+    group: "work",
     featured: true,
     description:
       "Shift management platform for nurses: a React Native mobile app plus three React web apps (staff, admin and scheduler) covering shift creation, assignment, document management and onboarding.",
     tech: ["React Native", "React", "TypeScript"],
-    image: "",
+    links: { appstore: "", playstore: "", website: "", github: "" },
+    screenshots: [],
   },
   {
     name: "GoPath & GoPath Agent",
     tagline: "Healthcare logistics · 2 apps",
     category: "Mobile",
+    group: "work",
     featured: true,
     description:
       "Lab-test booking app paired with a phlebotomist agent app — slot booking, home sample collection, live status updates and an optimized end-to-end lab supply chain.",
     tech: ["React Native", "JavaScript", "iOS", "Android"],
-    image: "",
+    links: { appstore: "", playstore: "", website: "", github: "" },
+    screenshots: [],
   },
   {
     name: "Comet",
     tagline: "Social · Healthcare",
     category: "Mobile",
+    group: "work",
     featured: true,
     description:
       "Social network for doctors and healthcare professionals — medical news, rich posts with video/image/document uploads, and built-in Zoom video rooms for case discussions.",
     tech: ["React Native", "JavaScript", "Zoom SDK"],
-    image: "",
+    links: { appstore: "", playstore: "", website: "", github: "" },
+    screenshots: [],
   },
   {
     name: "Delibo & Delibo Delivery",
     tagline: "E-commerce · 2 apps",
     category: "Mobile",
-    featured: true,
+    group: "work",
     description:
       "Online grocery platform: a customer app with browsing, cart and online payments, plus a dedicated delivery-agent app for order tracking and fleet-scale fulfilment.",
     tech: ["React Native", "JavaScript", "Payments"],
-    image: "",
+    links: { appstore: "", playstore: "", website: "", github: "" },
+    screenshots: [],
   },
   {
     name: "Health Fabric",
     tagline: "Health & wellness",
     category: "Mobile",
-    featured: true,
+    group: "work",
     description:
       "Multilingual wellness platform where clinicians build care plans and patients follow them — with social circles, family invitations and premium virtual consultations.",
     tech: ["React Native", "JavaScript", "i18n"],
-    image: "",
+    links: { appstore: "", playstore: "", website: "", github: "" },
+    screenshots: [],
   },
   {
     name: "Skyline Tracking",
     tagline: "IoT · Asset management",
     category: "Mobile",
+    group: "work",
     description:
       "Remote asset management with real-time location, reporting and alerting so operations teams can act decisively.",
     tech: ["React Native", "Maps", "Real-time"],
-    image: "",
+    links: { appstore: "", playstore: "", website: "", github: "" },
+    screenshots: [],
   },
   {
     name: "Kimst Hospital",
     tagline: "Healthcare",
     category: "Mobile",
+    group: "work",
     description:
       "Patient appointment booking and medical-profile management tied to the hospital's doctors and departments.",
     tech: ["React Native", "JavaScript"],
-    image: "",
-  },
-  {
-    name: "OCR Scan Easyish",
-    tagline: "Productivity · OCR",
-    category: "Mobile",
-    description:
-      "OCR tool that extracts text from images, generates PDFs from the results and shares them to other apps.",
-    tech: ["React Native", "OCR", "PDF"],
-    image: "",
-  },
-  {
-    name: "Lifetoken",
-    tagline: "Creator economy",
-    category: "Mobile",
-    description:
-      "Audience-engagement tool that helps creators connect with followers and activate their passive audience.",
-    tech: ["React Native", "JavaScript"],
-    image: "",
+    links: { appstore: "", playstore: "", website: "", github: "" },
+    screenshots: [],
   },
   {
     name: "CaseTrack",
     tagline: "LegalTech",
     category: "Mobile",
+    group: "work",
     description:
       "End-to-end case recording and tracking for law firms and in-house legal departments.",
     tech: ["React Native", "JavaScript"],
-    image: "",
+    links: { appstore: "", playstore: "", website: "", github: "" },
+    screenshots: [],
   },
   {
     name: "Recruit Online",
     tagline: "HR Tech",
     category: "Mobile",
+    group: "work",
     description:
       "Full recruitment-lifecycle management with a single view of candidates and clients.",
     tech: ["React Native", "JavaScript"],
-    image: "",
+    links: { appstore: "", playstore: "", website: "", github: "" },
+    screenshots: [],
+  },
+  {
+    name: "Portfolio v2",
+    tagline: "This site · Editorial design",
+    category: "Web",
+    group: "work",
+    featured: true,
+    description:
+      "The site you're reading — an editorial ink-and-paper portfolio built with React, Tailwind CSS v4 and Framer Motion, with a hand-rolled reveal system and hash-routed project index.",
+    tech: ["React", "Tailwind CSS", "Framer Motion", "Vite"],
+    links: { appstore: "", playstore: "", website: "", github: "https://github.com/arshaqckcode95/" },
+    screenshots: [],
+  },
+  {
+    name: "OCR Scan Easyish",
+    tagline: "Productivity · OCR",
+    category: "Mobile",
+    group: "work",
+    featured: true,
+    description:
+      "OCR tool that extracts text from images, generates PDFs from the results and shares them to other apps.",
+    tech: ["React Native", "OCR", "PDF"],
+    links: { appstore: "", playstore: "", website: "", github: "" },
+    screenshots: [],
+  },
+  {
+    name: "Lifetoken",
+    tagline: "Creator economy",
+    category: "Mobile",
+    group: "work",
+    featured: true,
+    description:
+      "Audience-engagement tool that helps creators connect with followers and activate their passive audience.",
+    tech: ["React Native", "JavaScript"],
+    links: { appstore: "", playstore: "", website: "", github: "" },
+    screenshots: [],
   },
 ];
 

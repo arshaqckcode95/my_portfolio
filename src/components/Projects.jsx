@@ -1,147 +1,120 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { FiSmartphone, FiGlobe, FiGithub } from "react-icons/fi";
+import { motion } from "framer-motion";
+import { FiArrowUpRight } from "react-icons/fi";
 import Section from "./Section.jsx";
-import { projects, socials } from "../data/portfolio.js";
+import SectionHeading from "./SectionHeading.jsx";
+import Reveal from "./Reveal.jsx";
+import ProjectCard from "./ProjectCard.jsx";
+import ScreenshotModal from "./ScreenshotModal.jsx";
+import { projects, projectGroups } from "../data/portfolio.js";
 
-const FILTERS = ["All", "Mobile", "Web"];
+const HOME_LIMIT = 4;
 
-function Screenshot({ project }) {
-  if (project.image) {
-    return (
-      <img
-        src={import.meta.env.BASE_URL + project.image}
-        alt={`${project.name} screenshot`}
-        loading="lazy"
-        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-      />
-    );
-  }
-  // Branded placeholder until a real screenshot is dropped into public/screenshots/
-  const Icon = project.category === "Web" ? FiGlobe : FiSmartphone;
-  return (
-    <div className="flex h-full w-full flex-col items-center justify-center gap-3 bg-gradient-to-br from-accent-600/15 via-surface-900/5 to-cyan-500/15 dark:from-accent-500/15 dark:via-transparent dark:to-cyan-400/10">
-      <Icon className="text-3xl text-accent-500/70" />
-      <span className="font-display text-xl font-semibold tracking-wide text-slate-400 dark:text-slate-500">
-        {project.name}
-      </span>
-    </div>
-  );
-}
-
-function ProjectCard({ project }) {
-  return (
-    <motion.article
-      layout
-      initial={{ opacity: 0, scale: 0.96 }}
-      animate={{ opacity: 1, scale: 1 }}
-      exit={{ opacity: 0, scale: 0.96 }}
-      transition={{ duration: 0.3, ease: "easeOut" }}
-      className="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-200/70 dark:border-white/10 dark:bg-surface-900 dark:hover:border-accent-400/30 dark:hover:shadow-black/40"
-    >
-      <div className="relative h-44 overflow-hidden border-b border-slate-100 dark:border-white/5">
-        <Screenshot project={project} />
-        <span className="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full bg-white/85 px-2.5 py-1 text-xs font-medium text-slate-700 backdrop-blur dark:bg-surface-950/70 dark:text-slate-300">
-          {project.category === "Web" ? (
-            <FiGlobe size={12} />
-          ) : (
-            <FiSmartphone size={12} />
-          )}
-          {project.tagline}
-        </span>
-      </div>
-      <div className="flex flex-1 flex-col p-5">
-        <h3 className="font-display text-lg font-semibold text-slate-900 dark:text-white">
-          {project.name}
-        </h3>
-        <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
-          {project.description}
-        </p>
-        <div className="mt-4 flex flex-wrap gap-2">
-          {project.tech.map((t) => (
-            <span
-              key={t}
-              className="rounded-full bg-slate-100 px-2.5 py-1 font-mono text-xs text-slate-600 dark:bg-white/5 dark:text-slate-300"
-            >
-              {t}
-            </span>
-          ))}
-        </div>
-      </div>
-    </motion.article>
-  );
-}
+/* Featured first, original order otherwise. */
+const byFeatured = (a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0);
 
 export default function Projects() {
-  const [filter, setFilter] = useState("All");
-  const [showAll, setShowAll] = useState(false);
+  const [active, setActive] = useState(projectGroups[0].id);
+  const [shots, setShots] = useState(null);
 
-  const filtered = projects.filter(
-    (p) => filter === "All" || p.category === filter
-  );
-  const visible = showAll ? filtered : filtered.filter((p) => p.featured);
-  const hiddenCount = filtered.length - visible.length;
-  const github = socials.find((s) => s.icon === "github")?.url;
+  const group = projectGroups.find((g) => g.id === active);
+  const list = projects.filter((p) => p.group === active);
+  const visible = [...list].sort(byFeatured).slice(0, HOME_LIMIT);
+  const hidden = list.length - visible.length;
 
   return (
-    <Section
-      id="projects"
-      eyebrow="Work"
-      title="Projects I've shipped"
-      intro="17+ production apps across healthcare, fintech, e-commerce and workforce management — most live on both the App Store and Google Play."
-    >
-      <div className="mb-8 flex flex-wrap items-center gap-2">
-        {FILTERS.map((f) => (
-          <button
-            key={f}
-            onClick={() => setFilter(f)}
-            className={`rounded-full px-4 py-1.5 text-sm font-medium transition-colors ${
-              filter === f
-                ? "bg-accent-600 text-white shadow-md shadow-accent-600/25"
-                : "border border-slate-200 text-slate-600 hover:border-accent-400 hover:text-accent-600 dark:border-white/10 dark:text-slate-300 dark:hover:border-accent-400/50 dark:hover:text-accent-300"
-            }`}
-          >
-            {f}
-          </button>
-        ))}
-      </div>
+    <Section id="work">
+      <SectionHeading
+        index="01"
+        kicker="Selected work"
+        title="PROJECTS"
+        accent="that shipped"
+      />
 
-      <motion.div layout className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        <AnimatePresence mode="popLayout">
-          {visible.map((p) => (
-            <ProjectCard key={p.name} project={p} />
-          ))}
-        </AnimatePresence>
+      {/* Category rail — work / open source / hobby */}
+      <Reveal>
+        <div
+          role="tablist"
+          aria-label="Project categories"
+          className="flex gap-7 border-b border-ink-600/15 dark:border-paper-200/15 md:gap-10"
+        >
+          {projectGroups.map((g) => {
+            const count = projects.filter((p) => p.group === g.id).length;
+            const isActive = g.id === active;
+            return (
+              <button
+                key={g.id}
+                role="tab"
+                aria-selected={isActive}
+                onClick={() => setActive(g.id)}
+                className={`relative flex items-baseline gap-1.5 pb-3 font-mono text-xs uppercase tracking-[0.18em] transition-colors md:text-[13px] ${
+                  isActive
+                    ? "text-ink-700 dark:text-paper-100"
+                    : "text-ink-400 hover:text-ink-600 dark:text-ink-300 dark:hover:text-paper-200"
+                }`}
+              >
+                {g.label}
+                <sup className="font-mono text-[10px] text-flame-500">
+                  {count}
+                </sup>
+                {isActive && (
+                  <motion.span
+                    layoutId="project-tab-underline"
+                    className="absolute inset-x-0 -bottom-px h-[2px] bg-flame-500"
+                  />
+                )}
+              </button>
+            );
+          })}
+          <span className="ml-auto hidden self-end pb-3 font-mono text-[11px] uppercase tracking-[0.15em] text-ink-400 dark:text-ink-300 sm:block">
+            {group.blurb}
+          </span>
+        </div>
+      </Reveal>
+
+      {/* Card grid — re-animates on tab change */}
+      <motion.div
+        key={active}
+        initial={{ opacity: 0, y: 18 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+        className="mt-10 grid gap-5 md:grid-cols-2"
+      >
+        {visible.map((p, i) => (
+          <ProjectCard key={p.name} project={p} index={i} onShots={setShots} />
+        ))}
+        {visible.length === 0 && (
+          <p className="col-span-full border border-dashed border-ink-600/20 p-10 text-center font-mono text-xs uppercase tracking-[0.15em] text-ink-400 dark:border-paper-200/20 dark:text-ink-300">
+            Coming soon — builds in progress
+          </p>
+        )}
       </motion.div>
 
-      <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-        {hiddenCount > 0 && (
-          <button
-            onClick={() => setShowAll(true)}
-            className="rounded-xl border border-slate-300 px-5 py-2.5 text-sm font-semibold text-slate-700 transition-colors hover:border-accent-500 hover:text-accent-600 dark:border-white/15 dark:text-slate-200 dark:hover:border-accent-400 dark:hover:text-accent-400"
-          >
-            Show {hiddenCount} more project{hiddenCount > 1 ? "s" : ""}
-          </button>
-        )}
-        {showAll && (
-          <button
-            onClick={() => setShowAll(false)}
-            className="rounded-xl border border-slate-300 px-5 py-2.5 text-sm font-semibold text-slate-700 transition-colors hover:border-accent-500 hover:text-accent-600 dark:border-white/15 dark:text-slate-200 dark:hover:border-accent-400 dark:hover:text-accent-400"
-          >
-            Show featured only
-          </button>
-        )}
-        {github && (
-          <a
-            href={github}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-xl border border-slate-300 px-5 py-2.5 text-sm font-semibold text-slate-700 transition-colors hover:border-accent-500 hover:text-accent-600 dark:border-white/15 dark:text-slate-200 dark:hover:border-accent-400 dark:hover:text-accent-400"
-          >
-            <FiGithub /> More on GitHub
-          </a>
-        )}
-      </div>
+      {/* Full-index CTA — replaces a long on-page archive */}
+      <Reveal className="mt-10">
+        <a
+          href="#/projects"
+          className="group flex items-center justify-between gap-6 border border-ink-600/20 p-6 transition-colors duration-300 hover:border-flame-500 hover:bg-flame-500 dark:border-paper-200/20 md:p-8"
+        >
+          <div>
+            <p className="display text-2xl text-ink-700 transition-colors group-hover:text-paper-50 dark:text-paper-100 md:text-4xl">
+              FULL PROJECT INDEX
+            </p>
+            <p className="mt-2 font-mono text-[11px] uppercase tracking-[0.18em] text-ink-400 transition-colors group-hover:text-paper-50/80 dark:text-ink-300">
+              All {projects.length} builds — work, open source & hobby
+              {hidden > 0 ? ` · +${hidden} more in ${group.label}` : ""}
+            </p>
+          </div>
+          <span className="grid h-12 w-12 shrink-0 place-items-center border border-ink-600/25 text-ink-600 transition-all duration-300 group-hover:border-paper-50/60 group-hover:text-paper-50 dark:border-paper-200/25 dark:text-paper-200 md:h-14 md:w-14">
+            <FiArrowUpRight
+              size={22}
+              className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+            />
+          </span>
+        </a>
+      </Reveal>
+
+      <ScreenshotModal project={shots} onClose={() => setShots(null)} />
     </Section>
   );
 }
