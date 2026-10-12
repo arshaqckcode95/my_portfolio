@@ -1,78 +1,142 @@
-@font-face {
-  font-family: "Agustina Regular";
-  font-style: normal;
-  font-weight: normal;
-  src: local("Agustina Regular"),
-    url("./assests/fonts/Agustina.woff") format("woff");
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ────────────────────────────────────────────────────────────
+   Editorial "ink & paper" design tokens.
+   Light = warm paper, Dark = warm ink. One vermilion accent.
+   ──────────────────────────────────────────────────────────── */
+@theme {
+  --font-sans: "Archivo", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Instrument Serif", "Georgia", serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  /* Paper (light surfaces) */
+  --color-paper-50: #faf7f0;
+  --color-paper-100: #f3efe4;
+  --color-paper-200: #e9e3d3;
+  --color-paper-300: #d9d1bc;
+  --color-paper-400: #b8ae95;
+
+  /* Ink (dark surfaces / text) */
+  --color-ink-300: #a39e92;
+  --color-ink-400: #6f6b61;
+  --color-ink-500: #45423b;
+  --color-ink-600: #2b2925;
+  --color-ink-700: #201e1b;
+  --color-ink-800: #171613;
+  --color-ink-900: #100f0d;
+
+  /* Vermilion accent */
+  --color-flame-300: #ffa07e;
+  --color-flame-400: #ff6a3d;
+  --color-flame-500: #e8490f;
+  --color-flame-600: #c43c0b;
 }
-@font-face {
-  font-family: "Montserrat";
-  src: local("Montserrat"),
-    url("./assests/fonts/Montserrat-Regular.ttf") format("woff");
-}
-@font-face {
-  font-family: "Google Sans Bold";
-  src: local("Google Sans Bold"),
-    url("./assests/fonts/GoogleSans-Bold.ttf") format("woff");
-}
-@font-face {
-  font-family: "Google Sans Bold Italic";
-  src: local("Google Sans Bold Italic"),
-    url("./assests/fonts/GoogleSans-BoldItalic.ttf") format("woff");
-}
-@font-face {
-  font-family: "Google Sans Italic";
-  src: local("Google Sans Italic"),
-    url("./assests/fonts/GoogleSans-Italic.ttf") format("woff");
-}
-@font-face {
-  font-family: "Google Sans Medium";
-  src: local("Google Sans Medium"),
-    url("./assests/fonts/GoogleSans-Medium.ttf") format("woff");
-}
-@font-face {
-  font-family: "Google Sans Medium Italic";
-  src: local("Google Sans Medium Italic"),
-    url("./assests/fonts/GoogleSans-MediumItalic.ttf") format("woff");
-}
-@font-face {
-  font-family: "Google Sans Regular";
-  src: local("Google Sans Regular"),
-    url("./assests/fonts/GoogleSans-Regular.ttf") format("woff");
-}
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-html,
-body {
+
+html {
   scroll-behavior: smooth;
 }
+
 body {
-  margin: 0;
-  font: 19px / 23px Montserrat, "Montserrat", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  @apply bg-paper-100 font-sans text-ink-600 antialiased;
 }
-::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+
+.dark body {
+  @apply bg-ink-900 text-paper-200;
 }
-::-webkit-scrollbar-track {
-  background: #292a2d;
+
+::selection {
+  @apply bg-flame-500 text-paper-50;
 }
-::-webkit-scrollbar-thumb {
-  background: #e3405f;
-  border-radius: 5px;
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-flame-500) transparent;
 }
-::-webkit-scrollbar-thumb:hover {
-  background: #e3405f;
+
+/* Subtle paper grain over everything — keeps flat colour from feeling sterile. */
+.grain::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
-/* Media Query */
-@media (max-width: 1380px) {
-  html,
-  body {
-    font-size: 16px;
-    line-height: normal;
+
+/* Continuous marquee strip. Child content must be duplicated once. */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
   }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee var(--marquee-duration, 30s) linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* Slow rotation for the circular specialty badge. */
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spin-slow {
+  animation: spin-slow 14s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .marquee-track,
+  .spin-slow {
+    animation: none;
+  }
+}
+
+/* Editorial link underline that draws in from the left on hover. */
+.link-draw {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  transition: background-size 0.35s ease;
+}
+
+.link-draw:hover {
+  background-size: 100% 1px;
+}
+
+/* Big display headlines */
+.display {
+  @apply font-sans font-black uppercase leading-[0.92] tracking-tight;
+}
+
+/* The italic serif word inside display headlines */
+.display-accent {
+  @apply font-serif font-normal lowercase italic tracking-normal;
+}
+
+/* Hollow (outlined) type for oversized background words */
+.text-hollow {
+  -webkit-text-stroke: 1.5px var(--color-ink-400);
+  color: transparent;
+  opacity: 0.25;
+}
+
+.dark .text-hollow {
+  -webkit-text-stroke: 1.5px var(--color-ink-300);
 }
